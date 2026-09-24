@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRAINED // fly connectome</title>
+<meta name="description" content="A fly brain, spiking on Solana. Every window of neuron fires committed on chain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #05090d;
+    --panel: #09131a;
+    --panel-hi: #0e2029;
+    --line: #193440;
+    --ink: #dce9f1;
+    --muted: #728996;
+    --cyan: #50e5ff;
+    --green: #72e4ae;
+    --pink: #ff6d91;
+    --blue: #658dff;
+    --orange: #ffbd70;
+    --violet: #b18aff;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 18px 16px 64px; }
+
+  /* ---- header ---- */
+  h1 {
+    font-family: var(--mono);
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: -0.07em;
+    margin: 0 0 10px;
+  }
+  .badges { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 4px; }
+  .badge {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    padding: 3px 8px;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    border-radius: 3px;
+  }
+  .badge.live { border-color: var(--green); color: var(--green); }
+  .dataset { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .elapsed { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 6px 0 14px; }
+
+  /* ---- controls ---- */
+  .controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  button {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    background: var(--panel);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: border-color 120ms ease, color 120ms ease;
+  }
+  button:hover { border-color: var(--cyan); color: var(--cyan); }
+  button[aria-pressed="true"] { border-color: var(--cyan); color: var(--cyan); }
+  button.danger { border-color: var(--pink); color: var(--pink); }
+  button:focus-visible { outline: 1px solid var(--cyan); outline-offset: 2px; }
+  .ctl-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); }
+  .spacer { flex: 1; }
+
+  /* ---- panels ---- */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+  .panel > header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--panel-hi);
+    border-bottom: 1px solid var(--line);
+  }
+  .panel > header .num { font-family: var(--mono); font-size: 10px; color: var(--cyan); }
+  .panel > header h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  .panel > header .sub {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .body { padding: 14px; }
+
+  /* ---- stat rows ---- */
+  .stats { display: flex; flex-wrap: wrap; gap: 26px; margin-bottom: 12px; }
+  .stat .k {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    display: block;
+  }
+  .stat .v { font-family: var(--mono); font-size: 17px; font-weight: 500; }
+
+  .meter { margin-bottom: 14px; }
+  .meter .k { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; }
+  .bar { height: 3px; background: var(--panel-hi); border-radius: 2px; overflow: hidden; margin: 5px 0 3px; }
+  .bar > i { display: block; height: 100%; background: var(--cyan); width: 0%; transition: width 160ms linear; }
+  .meter .v { font-family: var(--mono); font-size: 15px; }
+
+  /* ---- canvases ---- */
+  .stage { position: relative; }
+  canvas { display: block; width: 100%; border-radius: 4px; }
+  .stage .tag {
+    position: absolute;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+  .legend { display: flex; gap: 16px; justify-content: flex-end; margin-top: 8px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.1em; color: var(--muted); }
+  .legend i { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+
+  /* ---- motor rates ---- */
+  .rates { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2px 18px; }
+  .rate { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 1px solid rgba(25,52,64,0.5); font-family: var(--mono); font-size: 11px; }
+  .rate .n { color: var(--muted); }
+  .rate .hz { font-variant-numeric: tabular-nums; }
+  .rate.hot .hz { color: var(--cyan); }
+
+  /* ---- receipts ---- */
+  .hint { font-size: 11px; color: var(--muted); margin: 10px 0 14px; }
+  .receipts { max-height: 320px; overflow-y: auto; border-top: 1px solid var(--line); }
+  .receipt {
+    display: grid;
+    grid-template-columns: 78px 1fr auto;
+    gap: 12px;
+    align-items: baseline;
+    padding: 7px 2px;
+    border-bottom: 1px solid rgba(25,52,64,0.5);
+    font-family: var(--mono);
+    font-size: 11px;
+  }
+  .receipt .w { color: var(--green); }
+  .receipt .leaf { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .receipt .meta { color: var(--muted); font-size: 10px; white-space: nowrap; }
+  .receipt a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+  .receipt a:hover { color: var(--cyan); border-bottom-color: var(--cyan); }
+  .receipt.verified .w { color: var(--cyan); }
+  .receipt.failed .w { color: var(--pink); }
+
+  .counts { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; padding-bottom: 8px; }
+  .counts b { color: var(--cyan); font-weight: 500; }
+
+  .note {
+    font-size: 11px;
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--orange);
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+  }
+  .note b { color: var(--orange); font-weight: 500; }
+
+  @media (max-width: 620px) {
+    .stats { gap: 16px; }
+    .stat .v { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>brained</h1>
+  <div class="badges">
+    <span class="badge" id="mode">BOOTING</span>
+    <span class="dataset" id="dataset">—</span>
+  </div>
+  <div class="elapsed"><span id="elapsed">0.0</span> ms</div>
+
+  <div class="controls">
+    <button id="reset">RESET</button>
+    <button id="pause">PAUSE</button>
+    <span class="ctl-label">WINDOWS / S</span>
+    <button class="rate-btn" data-rate="2">2</button>
+    <button class="rate-btn" data-rate="8">8</button>
+    <button class="rate-btn" data-rate="20" aria-pressed="true">20</button>
+    <button class="rate-btn" data-rate="100">100</button>
+    <span class="spacer"></span>
+    <button class="danger" id="commit-toggle">COMMIT: OFF</button>
+  </div>
+
+  <div class="controls">
+    <span class="ctl-label">SUGAR DRIVE</span>
+    <button class="sugar-btn" data-drive="0">none</button>
+    <button class="sugar-btn" data-drive="0.3">trace</button>
+    <button class="sugar-btn" data-drive="0.6">weak</button>
+    <button class="sugar-btn" data-drive="1.2" aria-pressed="true">sweet</button>
+    <button class="sugar-btn" data-drive="2.5">syrup</button>
+    <span class="ctl-label" id="gate">—</span>
+  </div>
+
+  <div class="note" id="provenance"><b>—</b></div>
+
+  <section class="panel">
+    <header><span class="num">01</span><h2>nervous system</h2><span class="sub">dorsal projection</span></header>
+    <div class="body">
+      <div class="stats">
+        <div class="stat"><span class="k">displayed somas</span><span class="v" id="somas">—</span></div>
+        <div class="stat"><span class="k">active window</span><span class="v" id="window">—</span></div>
+        <div class="stat"><span class="k">spikes so far</span><span class="v" id="spikes">0</span></div>
+        <div class="stat"><span class="k">neurons active</span><span class="v" id="active">0</span></div>
+      </div>
+      <div class="meter">
+        <span class="k">recent spike heat</span>
+        <div class="bar"><i id="heat-bar"></i></div>
+        <span class="v" id="heat">0%</span>
+      </div>
+      <div class="stage">
+        <canvas id="cloud" width="880" height="620"></canvas>
+        <span class="tag" style="left:10px; top:10px;">brain</span>
+        <span class="tag" style="left:10px; bottom:10px;">ventral nerve cord</span>
+      </div>
+      <div class="legend">
+        <span><i style="background:var(--orange)"></i>sugar drive</span>
+        <span><i style="background:var(--pink)"></i>MN9</span>
+        <span><i style="background:var(--cyan)"></i>firing</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><span class="num">02</span><h2>MN9 readout</h2><span class="sub">proboscis extension</span></header>
+    <div class="body">
+      <div class="stats">
+        <div class="stat"><span class="k">firing rate · 25 ms window</span><span class="v"><span id="mn9-hz">0.0</span> <span style="color:var(--muted);font-size:11px">Hz · L + R</span></span></div>
+        <div class="stat"><span class="k">onset</span><span class="v" id="mn9-onset">—</span></div>
+      </div>
+      <canvas id="raster" width="880" height="150"></canvas>
+      <div class="legend"><span>spike raster · ticks 0.1 ms</span></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><span class="num">03</span><h2>body · motor readout</h2><span class="sub">windowed motor rates</span></header>
+    <div class="body">
+      <div class="rates" id="rates"></div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><span class="num">04</span><h2>replay telemetry</h2><span class="sub">simulation</span></header>
+    <div class="body">
+      <div class="stats">
+        <div class="stat"><span class="k">simulated</span><span class="v"><span id="tel-ms">0.0</span> ms</span></div>
+        <div class="stat"><span class="k">window rate</span><span class="v" id="tel-rate">0.0</span></div>
+        <div class="stat"><span class="k">committed / windows</span><span class="v" id="tel-tx">0 / 0</span></div>
+        <div class="stat"><span class="k">simulation time</span><span class="v" id="tel-time">S0 · T0</span></div>
+      </div>
+      <canvas id="tape" width="880" height="90"></canvas>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><span class="num">05</span><h2>retained chain receipts</h2><span class="sub" id="net">—</span></header>
+    <div class="body">
+      <button id="verify">VERIFY ON CHAIN</button>
+      <p class="hint" id="verify-hint">VERIFY replays each window locally and checks the recomputed leaf against what is on chain. It does not trust the leaf shown here.</p>
+      <div class="counts"><span>landed windows</span><span><b id="landed">0</b> retained</span></div>
+      <div class="receipts" id="receipts"></div>
+    </div>
+  </section>
+
+</div>
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>
