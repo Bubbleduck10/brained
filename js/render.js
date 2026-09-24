@@ -5,19 +5,68 @@
 // once at load, and each frame writes pixels straight into an ImageData buffer.
 // That turns drawing into array writes, which stays comfortable at this count.
 
-const BG = [5, 9, 13];
-
 /** Packs to the 0xAABBGGRR word layout a little-endian Uint32Array view wants. */
 function rgba(r, g, b, a = 255) {
   return ((a << 24) | (b << 16) | (g << 8) | r) >>> 0;
 }
 
+function parseHex(hex) {
+  const h = hex.trim().replace("#", "");
+  const full = h.length === 3 ? h[0] + h[0] + h[1] + h[1] + h[2] + h[2] : h;
+  return [
+    parseInt(full.slice(0, 2), 16),
+    parseInt(full.slice(2, 4), 16),
+    parseInt(full.slice(4, 6), 16),
+  ];
+}
+
+/**
+ * The palette lives in the stylesheet, not here.
+ *
+ * The point cloud and the chrome around it have to agree — a canvas painted
+ * with its own copy of the background is the kind of thing that only shows up
+ * as a seam once the theme changes. So read the same custom properties the CSS
+ * uses, and fall back to the amber values only if there is no document to read
+ * (tests, workers).
+ */
+const FALLBACK = {
+  "--bg": "#0a0705",
+  "--panel": "#140f09",
+  "--line": "#3a2c18",
+  "--tissue": "#6b4a1e",
+  "--amber": "#ffa629",
+  "--hot": "#ff6b1a",
+  "--red": "#e8384f",
+  "--cream": "#ffd9a0",
+};
+
+function theme(name) {
+  if (typeof getComputedStyle === "function" && typeof document !== "undefined") {
+    const v = getComputedStyle(document.documentElement).getPropertyValue(name);
+    if (v && v.trim()) return v.trim();
+  }
+  return FALLBACK[name];
+}
+
+const BG = parseHex(theme("--bg"));
+
+/** Panel fill and gridlines for the two small canvases. */
+export const CHROME = {
+  panel: theme("--panel"),
+  grid: (() => {
+    const [r, g, b] = parseHex(theme("--line"));
+    return `rgba(${r},${g},${b},0.6)`;
+  })(),
+  raster: theme("--red"),
+  tape: theme("--amber"),
+};
+
 export const PALETTE = {
-  resting: rgba(0x2c, 0x4a, 0x56, 255),
-  firing: rgba(0x50, 0xe5, 0xff, 255),
-  sugar: rgba(0xff, 0xbd, 0x70, 255),
-  mn9: rgba(0xff, 0x6d, 0x91, 255),
-  glow: rgba(0x72, 0xe4, 0xae, 255),
+  resting: rgba(...parseHex(theme("--tissue"))),
+  firing: rgba(...parseHex(theme("--hot"))),
+  sugar: rgba(...parseHex(theme("--cream"))),
+  mn9: rgba(...parseHex(theme("--red"))),
+  glow: rgba(...parseHex(theme("--amber"))),
 };
 
 export class CloudRenderer {
@@ -144,11 +193,11 @@ export class Raster {
   }
   draw() {
     const { ctx, canvas, rows } = this;
-    ctx.fillStyle = "#09131a";
+    ctx.fillStyle = CHROME.panel;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     const rowH = canvas.height / rows;
 
-    ctx.strokeStyle = "rgba(25,52,64,0.6)";
+    ctx.strokeStyle = CHROME.grid;
     ctx.lineWidth = 1;
     for (let r = 1; r < rows; r++) {
       ctx.beginPath();
@@ -157,7 +206,7 @@ export class Raster {
       ctx.stroke();
     }
 
-    ctx.fillStyle = "#ff6d91";
+    ctx.fillStyle = CHROME.raster;
     const x0 = canvas.width - this.history.length;
     for (let i = 0; i < this.history.length; i++) {
       for (const r of this.history[i]) {
@@ -180,11 +229,11 @@ export class Tape {
   }
   draw() {
     const { ctx, canvas, values } = this;
-    ctx.fillStyle = "#09131a";
+    ctx.fillStyle = CHROME.panel;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     if (!values.length) return;
     const peak = Math.max(1, ...values);
-    ctx.fillStyle = "#50e5ff";
+    ctx.fillStyle = CHROME.tape;
     const x0 = canvas.width - values.length;
     for (let i = 0; i < values.length; i++) {
       const hgt = (values[i] / peak) * (canvas.height - 4);

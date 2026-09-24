@@ -139,7 +139,7 @@ async function main() {
     const hz = (mn9Spikes / Math.max(1, mn9List.length)) * (1000 / windowMs);
     $("mn9-hz").textContent = hz.toFixed(1);
     $("gate").textContent = hz > 0 ? "PROBOSCIS EXTENDED" : "proboscis shut";
-    $("gate").style.color = hz > 0 ? "var(--pink)" : "var(--muted)";
+    $("gate").style.color = hz > 0 ? "var(--red)" : "var(--muted)";
     if (mn9Spikes > 0 && mn9Onset === null) {
       mn9Onset = (sim.tick * DEFAULT_PARAMS.msPerTick).toFixed(1) + " ms";
       $("mn9-onset").textContent = mn9Onset;

@@ -10,18 +10,26 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #05090d;
-    --panel: #09131a;
-    --panel-hi: #0e2029;
-    --line: #193440;
-    --ink: #dce9f1;
-    --muted: #728996;
-    --cyan: #50e5ff;
-    --green: #72e4ae;
-    --pink: #ff6d91;
-    --blue: #658dff;
-    --orange: #ffbd70;
-    --violet: #b18aff;
+    /* Amber specimen: something preserved under glass and lit from below.
+       These are the single source of truth — render.js reads them at load
+       rather than keeping its own copies, so the palette changes in one place. */
+    --bg: #0a0705;
+    --panel: #140f09;
+    --panel-hi: #1c150c;
+    --line: #3a2c18;
+    --ink: #f0e6d2;
+    --muted: #97866b;
+
+    --amber: #ffa629;   /* primary accent, resting tissue */
+    --hot: #ff6b1a;     /* firing */
+    --red: #e8384f;     /* MN9 — the readout that matters */
+    --cream: #ffd9a0;   /* sugar drive */
+    --olive: #c2a83e;   /* alive / healthy */
+    --rose: #d98a6a;
+
+    /* the dim tone the 139,662 resting somas are drawn in */
+    --tissue: #6b4a1e;
+
     --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
 
@@ -53,11 +61,11 @@
     font-size: 10px;
     letter-spacing: 0.14em;
     padding: 3px 8px;
-    border: 1px solid var(--orange);
-    color: var(--orange);
+    border: 1px solid var(--hot);
+    color: var(--hot);
     border-radius: 3px;
   }
-  .badge.live { border-color: var(--green); color: var(--green); }
+  .badge.live { border-color: var(--olive); color: var(--olive); }
   .dataset { font-family: var(--mono); font-size: 11px; color: var(--muted); }
   .elapsed { font-family: var(--mono); font-size: 12px; color: var(--muted); margin: 6px 0 14px; }
 
@@ -75,10 +83,10 @@
     cursor: pointer;
     transition: border-color 120ms ease, color 120ms ease;
   }
-  button:hover { border-color: var(--cyan); color: var(--cyan); }
-  button[aria-pressed="true"] { border-color: var(--cyan); color: var(--cyan); }
-  button.danger { border-color: var(--pink); color: var(--pink); }
-  button:focus-visible { outline: 1px solid var(--cyan); outline-offset: 2px; }
+  button:hover { border-color: var(--amber); color: var(--amber); }
+  button[aria-pressed="true"] { border-color: var(--amber); color: var(--amber); }
+  button.danger { border-color: var(--red); color: var(--red); }
+  button:focus-visible { outline: 1px solid var(--amber); outline-offset: 2px; }
   .ctl-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); }
   .spacer { flex: 1; }
 
@@ -98,7 +106,7 @@
     background: var(--panel-hi);
     border-bottom: 1px solid var(--line);
   }
-  .panel > header .num { font-family: var(--mono); font-size: 10px; color: var(--cyan); }
+  .panel > header .num { font-family: var(--mono); font-size: 10px; color: var(--amber); }
   .panel > header h2 {
     font-family: var(--mono);
     font-size: 11px;
@@ -132,7 +140,7 @@
   .meter { margin-bottom: 14px; }
   .meter .k { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; color: var(--muted); text-transform: uppercase; }
   .bar { height: 3px; background: var(--panel-hi); border-radius: 2px; overflow: hidden; margin: 5px 0 3px; }
-  .bar > i { display: block; height: 100%; background: var(--cyan); width: 0%; transition: width 160ms linear; }
+  .bar > i { display: block; height: 100%; background: var(--amber); width: 0%; transition: width 160ms linear; }
   .meter .v { font-family: var(--mono); font-size: 15px; }
 
   /* ---- canvases ---- */
@@ -152,10 +160,10 @@
 
   /* ---- motor rates ---- */
   .rates { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2px 18px; }
-  .rate { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 1px solid rgba(25,52,64,0.5); font-family: var(--mono); font-size: 11px; }
+  .rate { display: flex; justify-content: space-between; align-items: baseline; padding: 4px 0; border-bottom: 1px solid rgba(58,44,24,0.55); font-family: var(--mono); font-size: 11px; }
   .rate .n { color: var(--muted); }
   .rate .hz { font-variant-numeric: tabular-nums; }
-  .rate.hot .hz { color: var(--cyan); }
+  .rate.hot .hz { color: var(--amber); }
 
   /* ---- receipts ---- */
   .hint { font-size: 11px; color: var(--muted); margin: 10px 0 14px; }
@@ -166,31 +174,31 @@
     gap: 12px;
     align-items: baseline;
     padding: 7px 2px;
-    border-bottom: 1px solid rgba(25,52,64,0.5);
+    border-bottom: 1px solid rgba(58,44,24,0.55);
     font-family: var(--mono);
     font-size: 11px;
   }
-  .receipt .w { color: var(--green); }
+  .receipt .w { color: var(--olive); }
   .receipt .leaf { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .receipt .meta { color: var(--muted); font-size: 10px; white-space: nowrap; }
   .receipt a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
-  .receipt a:hover { color: var(--cyan); border-bottom-color: var(--cyan); }
-  .receipt.verified .w { color: var(--cyan); }
-  .receipt.failed .w { color: var(--pink); }
+  .receipt a:hover { color: var(--amber); border-bottom-color: var(--amber); }
+  .receipt.verified .w { color: var(--amber); }
+  .receipt.failed .w { color: var(--red); }
 
   .counts { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; padding-bottom: 8px; }
-  .counts b { color: var(--cyan); font-weight: 500; }
+  .counts b { color: var(--amber); font-weight: 500; }
 
   .note {
     font-size: 11px;
     color: var(--muted);
     border: 1px solid var(--line);
-    border-left: 2px solid var(--orange);
+    border-left: 2px solid var(--hot);
     border-radius: 4px;
     padding: 10px 12px;
     margin-bottom: 14px;
   }
-  .note b { color: var(--orange); font-weight: 500; }
+  .note b { color: var(--hot); font-weight: 500; }
 
   /* ---- life support ---- */
   .addr {
@@ -202,9 +210,9 @@
   .addr code { word-break: break-all; color: var(--ink); }
   .addr button { padding: 5px 10px; }
   .addr a { color: var(--muted); font-size: 10px; letter-spacing: 0.14em; text-decoration: none; }
-  .addr a:hover { color: var(--cyan); }
-  .alive { color: var(--green); }
-  .dying { color: var(--pink); }
+  .addr a:hover { color: var(--amber); }
+  .alive { color: var(--olive); }
+  .dying { color: var(--red); }
 
   @media (max-width: 620px) {
     .stats { gap: 16px; }
@@ -266,9 +274,9 @@
         <span class="tag" style="left:10px; bottom:10px;">ventral nerve cord</span>
       </div>
       <div class="legend">
-        <span><i style="background:var(--orange)"></i>sugar drive</span>
-        <span><i style="background:var(--pink)"></i>MN9</span>
-        <span><i style="background:var(--cyan)"></i>firing</span>
+        <span><i style="background:var(--hot)"></i>sugar drive</span>
+        <span><i style="background:var(--red)"></i>MN9</span>
+        <span><i style="background:var(--amber)"></i>firing</span>
       </div>
     </div>
   </section>
