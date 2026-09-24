@@ -1,0 +1,8 @@
+{
+  "_comment": "Chain configuration. Until a committer is pointed at this deployment, windows are hashed in the browser and VERIFY recomputes them locally rather than checking anything on chain. The page says so.",
+  "configured": false,
+  "cluster": "devnet",
+  "rpcUrl": "https://api.devnet.solana.com",
+  "explorer": "https://explorer.solana.com/tx/{signature}?cluster=devnet",
+  "committer": null
+}

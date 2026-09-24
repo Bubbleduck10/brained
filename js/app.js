@@ -249,8 +249,16 @@ let chain = null;
 async function setupChain() {
   try {
     const cfg = await (await fetch("./data/chain.json", { cache: "no-store" })).json();
-    chain = cfg;
-    $("net").textContent = cfg.cluster ?? "devnet";
+    // `configured` is the honest flag: the file existing does not mean a
+    // committer is running against this deployment.
+    chain = cfg.configured ? cfg : null;
+    $("net").textContent = cfg.configured ? (cfg.cluster ?? "devnet") : "no committer";
+    if (!cfg.configured) {
+      $("verify-hint").textContent =
+        "No committer is running against this deployment yet, so nothing here is on chain. " +
+        "Windows are hashed in the browser and VERIFY recomputes them locally — which proves " +
+        "the hashing is deterministic, not that anything was published.";
+    }
   } catch {
     $("net").textContent = "not configured";
     $("verify-hint").textContent =
