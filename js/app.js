@@ -585,13 +585,25 @@ async function setupLifeSupport(currentRate) {
         "what stops without funding is the record of it." + caveat;
       return;
     }
-    const hours = sol / burnPerHour;
+    // What this balance BUYS is a fact. How long it would last is a
+    // hypothetical about a committer that is not currently running, and
+    // reporting that hypothetical as "time remaining" states that something is
+    // draining when nothing is. Lead with the fact.
+    const windowsAffordable = Math.floor(lamports / LAMPORTS_PER_TX);
     $("remaining").className = "v alive";
-    $("remaining").textContent =
+    $("remaining").textContent = `${fmt(windowsAffordable)} windows`;
+
+    const hours = sol / burnPerHour;
+    const wouldLast =
       hours > 48 ? `${(hours / 24).toFixed(1)} days` : hours > 1 ? `${hours.toFixed(1)} hours` : `${(hours * 60).toFixed(0)} min`;
-    $("ls-hint").textContent =
-      `At ${rate} windows per second this burns ${burnPerHour.toFixed(3)} SOL an hour. ` +
-      `When it empties, the commits stop.`;
+    const committed = state.manifest?.receipts.length ?? 0;
+    $("ls-hint").textContent = committed
+      ? `${fmt(committed)} window${committed === 1 ? "" : "s"} have been committed so far. The committer runs in ` +
+        `batches rather than continuously, so this balance is not draining right now — it buys ` +
+        `${fmt(windowsAffordable)} more windows. One running at this page's ${rate}/s would spend ` +
+        `${burnPerHour.toFixed(3)} SOL an hour and empty it in ${wouldLast}. When it empties, the commits stop.`
+      : `Nothing has been committed yet. Every window of neuron fires costs one transaction, so this ` +
+        `balance buys ${fmt(windowsAffordable)} of them — ${wouldLast} of continuous committing at ${rate}/s.`;
   }
 
   await poll();
