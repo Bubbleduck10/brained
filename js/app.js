@@ -15,12 +15,20 @@ import { loadConnectome } from "./connectome-source.js";
 import { CloudRenderer, Raster, Tape } from "./render.js";
 import { Simulation, runWindow, DEFAULT_PARAMS } from "./sim/lif.js";
 import { commitWindow, canHash } from "./sim/commit.js";
+import { CANONICAL } from "./sim/canonical.js";
+import { loadManifest, verifyWindowOnChain } from "./chain.js";
 
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => n.toLocaleString("en-US");
 
-/** 25 ms at 0.1 ms per tick — the window the readouts pool over. */
-const TICKS_PER_WINDOW = 250;
+/**
+ * 25 ms at 0.1 ms per tick — the window the readouts pool over, and the window
+ * a committed leaf covers. Taken from the shared canonical definition rather
+ * than repeated here: a page that pools over a different number of ticks than
+ * the committer is running a different simulation, and would produce leaves
+ * that never match without ever looking wrong.
+ */
+const TICKS_PER_WINDOW = CANONICAL.ticksPerWindow;
 // Steady-state conductance is drive/(1-synDecay) = 50x the per-tick value, and
 // the threshold gap is 7 mV. 0.3 puts the GRNs comfortably above it without
 // pinning them at their refractory ceiling.
@@ -30,7 +38,7 @@ const TICKS_PER_WINDOW = 250;
 // 2,352 inhibitory onto MN9_L), so sugar tips a decision rather than
 // triggering a reflex — and that falls out of the connectome, not out of
 // anything tuned here.
-let SUGAR_DRIVE = 1.2;
+let SUGAR_DRIVE = CANONICAL.sugarDrive;
 
 const state = {
   running: true,
@@ -40,6 +48,11 @@ const state = {
   committed: 0,
   receipts: [],
   windows: new Map(), // index -> Window, kept so VERIFY can replay
+  // The window at which this run stopped being the committed one, or null
+  // while it still is. Changing the sugar drive is the whole demonstration, but
+  // it makes the local simulation a different experiment from that window on.
+  divergedAt: null,
+  manifest: null,
 };
 
 async function main() {
@@ -194,6 +207,9 @@ async function main() {
   $("reset").addEventListener("click", () => {
     sim.reset();
     sim.setDrive(sugar, SUGAR_DRIVE);
+    // A reset at the canonical drive is not a new experiment, it is the same
+    // run from the top — so it can be checked against the chain again.
+    state.divergedAt = SUGAR_DRIVE === CANONICAL.sugarDrive ? null : 0;
     state.session++;
     state.windowIndex = 0;
     state.committed = 0;
@@ -209,6 +225,14 @@ async function main() {
       SUGAR_DRIVE = Number(b.dataset.drive);
       sim.clearDrive();
       if (SUGAR_DRIVE > 0) sim.setDrive(sugar, SUGAR_DRIVE);
+      // Once the drive has been touched, this run is no longer the one on
+      // chain — and it does not become it again by setting the drive back,
+      // because the membrane state it passed through in between is different.
+      // Record where it forked instead of pretending it did not.
+      if (state.divergedAt === null && SUGAR_DRIVE !== CANONICAL.sugarDrive) {
+        state.divergedAt = state.windowIndex;
+        markDivergence();
+      }
       mn9Onset = null;
       $("mn9-onset").textContent = "—";
       for (const o of document.querySelectorAll(".sugar-btn")) o.setAttribute("aria-pressed", String(o === b));
@@ -248,30 +272,67 @@ function renderRates(pools, counts, windowMs = 25) {
 let chain = null;
 
 async function setupChain() {
+  let cfg = null;
   try {
-    const cfg = await (await fetch("./data/chain.json", { cache: "no-store" })).json();
-    // `configured` is the honest flag: the file existing does not mean a
-    // committer is running against this deployment.
-    chain = cfg.configured ? cfg : null;
-    $("net").textContent = cfg.configured ? (cfg.cluster ?? "devnet") : "no committer";
-    if (!cfg.configured) {
-      $("verify-hint").textContent =
-        "No committer is running against this deployment yet, so nothing here is on chain. " +
-        "Windows are hashed in the browser and VERIFY recomputes them locally — which proves " +
-        "the hashing is deterministic, not that anything was published.";
-    }
+    cfg = await (await fetch("./data/chain.json", { cache: "no-store" })).json();
   } catch {
     $("net").textContent = "not configured";
     $("verify-hint").textContent =
       "No chain configured yet. Windows are hashed locally; once a committer is pointed at this session its receipts appear here.";
+    return;
   }
+
+  // `configured` is the honest flag: the file existing does not mean a
+  // committer is running against this deployment.
+  chain = cfg.configured ? cfg : null;
+  if (!cfg.configured) {
+    $("net").textContent = "no committer";
+    $("verify-hint").textContent =
+      "No committer is running against this deployment yet, so nothing here is on chain. " +
+      "Windows are hashed in the browser and VERIFY recomputes them locally — which proves " +
+      "the hashing is deterministic, not that anything was published.";
+    return;
+  }
+
+  state.manifest = await loadManifest();
+  $("net").textContent = cfg.cluster ?? "devnet";
+
+  if (!state.manifest) {
+    $("verify-hint").textContent =
+      `A ${cfg.cluster ?? "devnet"} committer is configured but has published no manifest yet, ` +
+      "so there is nothing to check these windows against.";
+    return;
+  }
+
+  const m = state.manifest;
+  const last = m.receipts[m.receipts.length - 1].window;
+  $("verify-hint").textContent =
+    `${fmt(m.receipts.length)} window${m.receipts.length === 1 ? "" : "s"} of this run are on ${m.cluster} ` +
+    `(S${m.session}, W0–W${last}). This page replays the same run; VERIFY recomputes each leaf here and ` +
+    "fetches the memo from chain to compare. They were produced by different code on different machines.";
+}
+
+/** The run has forked from the committed one; say so where it is visible. */
+function markDivergence() {
+  if (!state.manifest) return;
+  $("verify-hint").textContent =
+    `This run left the committed one at W${state.divergedAt} — changing the sugar drive makes it a ` +
+    "different simulation, so its leaves stop matching from there. Windows before that point still " +
+    "check out; RESET at sweet returns to the committed run.";
+}
+
+/** The committed entry for a window, or null if this run is not that run. */
+function committedEntry(index) {
+  if (!state.manifest) return null;
+  if (state.divergedAt !== null && index >= state.divergedAt) return null;
+  return state.manifest.byWindow.get(index) ?? null;
 }
 
 let hashingWarned = false;
 
 async function commitIfEnabled(w) {
-  // The browser never holds a key. Committing is done by the keeper process;
-  // this page hashes the window so it can check what the keeper published.
+  // The browser never holds a key. Committing is done by the committer process;
+  // this page hashes the window so it can check what the committer published.
   //
   // Hashing needs a secure context. Over plain http there is nothing to do but
   // say so once — not throw on every window for as long as the page is open.
@@ -286,22 +347,49 @@ async function commitIfEnabled(w) {
     return;
   }
   const leaf = await commitWindow(w);
-  state.receipts.unshift({ index: w.index, leaf: leaf.leaf, count: w.count, slot: null, status: "local" });
+  const entry = committedEntry(w.index);
+  if (entry) state.committed++;
+  state.receipts.unshift({
+    index: w.index,
+    leaf: leaf.leaf,
+    count: w.count,
+    // A slot is only filled in from something that actually landed. An
+    // optimistic slot here would make an uncommitted window look published.
+    slot: entry ? entry.slot : null,
+    signature: entry ? entry.signature : null,
+    status: entry ? "onchain" : "local",
+  });
   if (state.receipts.length > 60) state.receipts.pop();
   renderReceipts();
+}
+
+function explorerUrl(signature) {
+  const t = state.manifest?.explorer ?? chain?.explorer;
+  return t ? t.replace("{signature}", signature) : null;
 }
 
 function renderReceipts() {
   const el = $("receipts");
   el.innerHTML = "";
+  const session = state.manifest && state.divergedAt === null ? state.manifest.session : state.session;
   for (const r of state.receipts.slice(0, 40)) {
     const row = document.createElement("div");
-    row.className = "receipt" + (r.status === "verified" ? " verified" : r.status === "failed" ? " failed" : "");
-    const slot = r.slot ? `slot ${fmt(r.slot)}` : "not yet committed";
+    row.className =
+      "receipt" + (r.status === "verified" ? " verified" : r.status === "failed" ? " failed" : "");
+
+    let meta;
+    if (r.status === "verified") meta = `${r.count} spikes · verified slot ${fmt(r.slot)}`;
+    else if (r.status === "failed") meta = `${r.count} spikes · ${r.reason ?? "verification failed"}`;
+    else if (r.slot) meta = `${r.count} spikes · slot ${fmt(r.slot)}`;
+    else meta = `${r.count} spikes · not yet committed`;
+
+    const url = r.signature ? explorerUrl(r.signature) : null;
     row.innerHTML =
-      `<span class="w">S${state.session} W${r.index}</span>` +
+      `<span class="w">S${session} W${r.index}</span>` +
       `<span class="leaf">leaf ${r.leaf.slice(0, 12)}…</span>` +
-      `<span class="meta">${r.count} spikes · ${slot}</span>`;
+      (url
+        ? `<a class="meta" href="${url}" target="_blank" rel="noopener noreferrer">${meta}</a>`
+        : `<span class="meta">${meta}</span>`);
     el.appendChild(row);
   }
   $("landed").textContent = fmt(state.receipts.length);
@@ -312,20 +400,58 @@ async function verifyAll() {
     $("verify-hint").textContent = "Nothing to verify against — no chain is configured for this session.";
     return;
   }
+  if (!state.manifest) {
+    $("verify-hint").textContent = "No manifest is published, so there are no transactions to check against.";
+    return;
+  }
   $("verify").textContent = "VERIFYING…";
+
+  const rpcUrl = state.manifest.rpcUrl ?? chain.rpcUrl;
   let ok = 0;
   let bad = 0;
+  let local = 0;
+  const failures = [];
+
   for (const r of state.receipts.slice(0, 20)) {
     const w = state.windows.get(r.index);
     if (!w) continue;
     // Recompute from the stored window rather than trusting the displayed leaf.
     const recomputed = await commitWindow(w);
-    r.status = recomputed.leaf === r.leaf ? "verified" : "failed";
-    recomputed.leaf === r.leaf ? ok++ : bad++;
+    const entry = committedEntry(r.index);
+    if (!entry) {
+      // Nothing was published for this window. Saying "verified" here because
+      // the local hash is self-consistent would be the exact dishonesty this
+      // panel exists to avoid.
+      r.status = "local";
+      r.leaf = recomputed.leaf;
+      local++;
+      continue;
+    }
+    const res = await verifyWindowOnChain(rpcUrl, entry, recomputed.leaf, state.manifest.session);
+    r.status = res.ok ? "verified" : "failed";
+    r.slot = res.slot ?? entry.slot;
+    r.signature = entry.signature;
+    if (res.ok) ok++;
+    else {
+      bad++;
+      r.reason = res.reason;
+      if (failures.length < 2) failures.push(`W${r.index}: ${res.reason}`);
+    }
   }
+
   renderReceipts();
   $("verify").textContent = "VERIFY ON CHAIN";
-  $("verify-hint").textContent = `${ok} window${ok === 1 ? "" : "s"} recomputed and matched${bad ? `, ${bad} failed` : ""}.`;
+
+  if (!ok && !bad) {
+    $("verify-hint").textContent =
+      `None of the windows on screen are among the ${fmt(state.manifest.receipts.length)} that were committed ` +
+      `— the page has run past W${state.manifest.receipts[state.manifest.receipts.length - 1].window}. RESET to replay from the start.`;
+    return;
+  }
+  $("verify-hint").textContent =
+    `${ok} window${ok === 1 ? "" : "s"} replayed here and matched the memo on ${state.manifest.cluster}` +
+    `${bad ? `, ${bad} failed — ${failures.join("; ")}` : ""}` +
+    `${local ? `. ${local} more on screen were never committed, so there is nothing to check them against` : ""}.`;
 }
 
 main().catch((e) => console.error(e));
