@@ -375,9 +375,13 @@ async function setupLifeSupport(currentRate) {
   // Check both networks. Reading only the configured one means that funding
   // the wallet on the other network shows a confident, wrong zero — and the
   // page would look broken for the one reason nobody would think to check.
+  // api.mainnet-beta.solana.com returns 403 to browser requests; publicnode
+  // serves the same data with CORS. Using the official endpoint here would
+  // make every mainnet read fail, and the page would fall back to devnet's
+  // zero and announce "not funded" for a wallet that is funded.
   const NETWORKS = [
     { name: "devnet", rpc: "https://api.devnet.solana.com", cluster: "?cluster=devnet" },
-    { name: "mainnet", rpc: "https://api.mainnet-beta.solana.com", cluster: "" },
+    { name: "mainnet", rpc: "https://solana-rpc.publicnode.com", cluster: "" },
   ];
 
   async function balanceOn(net) {
@@ -396,6 +400,7 @@ async function setupLifeSupport(currentRate) {
       NETWORKS.map((n) => balanceOn(n).then((v) => ({ net: n, lamports: v })).catch(() => null)),
     );
     const live = results.filter(Boolean);
+    const unreadable = NETWORKS.filter((n) => !live.some((r) => r.net.name === n.name));
     if (!live.length) {
       // A public RPC will rate-limit. Say the reading is unavailable rather
       // than showing a stale number as if it were current.
@@ -421,10 +426,15 @@ async function setupLifeSupport(currentRate) {
     if (sol <= 0) {
       $("remaining").textContent = "not funded";
       $("remaining").className = "v dying";
+      // Only claim "empty everywhere" if everywhere was actually readable.
+      const caveat = unreadable.length
+        ? ` Could not read ${unreadable.map((n) => n.name).join(" or ")}, so this balance covers ` +
+          `${live.map((r) => r.net.name).join(" and ")} only.`
+        : "";
       $("ls-hint").textContent =
         "This wallet is empty, so nothing is being committed. Every window of neuron fires " +
         "costs one transaction; fund it and the commits begin. The simulation runs either way — " +
-        "what stops without funding is the record of it.";
+        "what stops without funding is the record of it." + caveat;
       return;
     }
     const hours = sol / burnPerHour;
