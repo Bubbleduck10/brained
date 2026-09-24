@@ -50,8 +50,23 @@ export function encodeWindow(w) {
     }
     return new Uint8Array(buf);
 }
-/** SHA-256 via Web Crypto, which exists in browsers and in Node 18+. */
+/** True when Web Crypto is actually available to hash with. */
+export function canHash() {
+    return typeof globalThis.crypto?.subtle?.digest === "function";
+}
+/**
+ * SHA-256 via Web Crypto.
+ *
+ * `crypto.subtle` exists only in a SECURE CONTEXT — https, or localhost. Served
+ * over plain http it is `undefined`, so this works in development and fails on
+ * a freshly deployed domain whose certificate has not issued yet. Fail with a
+ * sentence that says that, rather than "cannot read properties of undefined".
+ */
 export async function sha256(bytes) {
+    if (!canHash()) {
+        throw new Error("Web Crypto is unavailable: crypto.subtle only exists in a secure context (https or localhost). " +
+            "Serve this over https and hashing will work.");
+    }
     const digest = await globalThis.crypto.subtle.digest("SHA-256", bytes);
     return new Uint8Array(digest);
 }

@@ -14,7 +14,7 @@
 import { loadConnectome } from "./connectome-source.js";
 import { CloudRenderer, Raster, Tape } from "./render.js";
 import { Simulation, runWindow, DEFAULT_PARAMS } from "./sim/lif.js";
-import { commitWindow } from "./sim/commit.js";
+import { commitWindow, canHash } from "./sim/commit.js";
 
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => n.toLocaleString("en-US");
@@ -266,9 +266,24 @@ async function setupChain() {
   }
 }
 
+let hashingWarned = false;
+
 async function commitIfEnabled(w) {
   // The browser never holds a key. Committing is done by the keeper process;
   // this page hashes the window so it can check what the keeper published.
+  //
+  // Hashing needs a secure context. Over plain http there is nothing to do but
+  // say so once — not throw on every window for as long as the page is open.
+  if (!canHash()) {
+    if (!hashingWarned) {
+      hashingWarned = true;
+      $("verify-hint").textContent =
+        "Window hashing is unavailable over plain http — crypto.subtle only exists in a secure " +
+        "context. The simulation is unaffected; receipts resume once this is served over https.";
+      $("net").textContent = "needs https";
+    }
+    return;
+  }
   const leaf = await commitWindow(w);
   state.receipts.unshift({ index: w.index, leaf: leaf.leaf, count: w.count, slot: null, status: "local" });
   if (state.receipts.length > 60) state.receipts.pop();
