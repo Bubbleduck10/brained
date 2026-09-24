@@ -1,0 +1,1412 @@
+{
+  "canonicalVersion": 1,
+  "cluster": "mainnet",
+  "session": 0,
+  "ticksPerWindow": 250,
+  "sugarDrive": 1.2,
+  "payer": "Fx9T8Vq7VDPnb1iR8mjbuPjqB6jPydfzWSNsXwCqhmkS",
+  "explorer": "https://explorer.solana.com/tx/{signature}",
+  "updated": "2026-09-24T21:51:28.085Z",
+  "receipts": [
+    {
+      "window": 0,
+      "leaf": "8yG1CkGFjsU6aQMus5t5tLsxGRyzJCbngSZy5RWfQss3",
+      "spikes": 646,
+      "signature": "55JnUER8tziN42L4mFbKvgxLbRFW4DnnrwMAKNfbWLoU4yHzMgwwuUywHYLVbK2cjkCNEp4SUNXLFRyeT4gjVNc3",
+      "slot": 450153813
+    },
+    {
+      "window": 1,
+      "leaf": "xsKUfCYg6NirGYbLqyrMkKYxa8VZzkstvsYhuj83eNM",
+      "spikes": 1354,
+      "signature": "3e4H72rYxibMo6mhQBR9EWemEUiswxEimaCougMPaZyCS6oBh3SdZCx29CyCciWsNiLusbixYesUvYDWaViS8wp8",
+      "slot": 450153870
+    },
+    {
+      "window": 2,
+      "leaf": "Fm1aH9H85JXXL1krsxo4MaFTccoi3Yu67RDWshcZf5A3",
+      "spikes": 1389,
+      "signature": "Kk2stXNS3p8ckidms94FnBXPaTNTK8S7HpAojeWicjZjPhNMu6ps5r5x74H7UYebLB3ptyaH4CBpLiofsru1LJi",
+      "slot": 450153873
+    },
+    {
+      "window": 3,
+      "leaf": "8Ks9ZN7HMn1Hpkyh36infEHDQ2DYXWG6vqhvYEQrSAPo",
+      "spikes": 1478,
+      "signature": "59NLh9FuF6GqatqF83xthRXVXCaHAk34WmpM6CrLDtdsqPzRqj3feWY5Bng3uwsATJTwvRMgyGxve7MmfLj2qiy9",
+      "slot": 450153876
+    },
+    {
+      "window": 4,
+      "leaf": "9x8onaiLFXf1gEvMc4PKxsS5zgwXE3ojquB1MD7e6Uy4",
+      "spikes": 1472,
+      "signature": "63ndz2LPPxVcCKhL99k88ZvQCyhNs3cCNRDr9HWygepFWLMSQ5qLiJhZ6Ug2nUAEfxbUeENudWunXv3MHLcqhV1q",
+      "slot": 450153878
+    },
+    {
+      "window": 5,
+      "leaf": "8Wdvkp3KxTos2JdWxDwcwgKxsiQwmhQreHKZhQfm4yve",
+      "spikes": 1412,
+      "signature": "4oLYkbjZc1mKYc5YDje58S9rEJSePQvGVwDjZgcNTjwjxAdCJacAkxY2yRZszjUS4QaN7BzWogdxsPb3raukdqCs",
+      "slot": 450153881
+    },
+    {
+      "window": 6,
+      "leaf": "BN7WnZT3hc3a1sPSPVk9HMparGjieqxRcsAXBNoeZXGr",
+      "spikes": 1498,
+      "signature": "3SpEQYw17XsRi4XYsn4rV83PvrBZdWE2J7tzikCcKvheHHRZkvBEgrg6oFV5rsUCkvJKA68BYUUXKQbXDoKn7ytW",
+      "slot": 450153883
+    },
+    {
+      "window": 7,
+      "leaf": "14F7CoL8j9FUjbbfhPgpiXS87jXtj3iHfGtdWUSWDvMB",
+      "spikes": 1399,
+      "signature": "5YAsc3cFWk67WB7cLuaYuUGA2YRgbyr1mmgRotkxwdMzKTBtaT8QJSxDDqtcHWdQ49EXPJVfPTqUZA1enKvHNKcd",
+      "slot": 450153885
+    },
+    {
+      "window": 8,
+      "leaf": "ixFWx2mt4SsaaNgsHevRDUNTGPXs3sy58Y2H1mLJ9mn",
+      "spikes": 1379,
+      "signature": "5LPvu7fzohTfU3NL2gZMucFxDWcymysodFsJeD1Muut3FpMz9dNggDLjiptdCpaeXVrscAidAHrJNcF9pmRdNrKF",
+      "slot": 450153887
+    },
+    {
+      "window": 9,
+      "leaf": "BMJ5Fik8xJPgjtFGUvots4izEGiWb8fisL9hsscWz4Yy",
+      "spikes": 1395,
+      "signature": "3ckGueEJKmnuu1HJH3ptZdUS6sfQ2AQBiqLUsSbm2ntT1xuYy6YSwE4gWuH1RpstMi6zbYj4xjJpEG5ukisWwzpX",
+      "slot": 450153889
+    },
+    {
+      "window": 10,
+      "leaf": "6dzZnH9XrdMoiqB4Y8VoVKhqXTWXLDxrVh4x5x4r6WMr",
+      "spikes": 1437,
+      "signature": "3dBYNCm1s6BU4xKjZkPyc2rU45r8Nq84WvBJXCg1kBtaFHUTpXw3BFqUCWWZYGStByVU83Kwzmy1SBZ7ac1x4eRu",
+      "slot": 450153891
+    },
+    {
+      "window": 11,
+      "leaf": "3e6MzWQBn1NiBYeuRU7fuqFHhHoJTzXiYnZmMQHDfru8",
+      "spikes": 1374,
+      "signature": "2fG7NfueQdFt2N2BPsofRav9aQebjNmmzzU3qRiYcRycDxWCHqjL5SH8i7fEVkExFcyb2va2aM6gCJmcXtJxF2q5",
+      "slot": 450153894
+    },
+    {
+      "window": 12,
+      "leaf": "BeaxmP4tZwb1VC7B4Dtn1QfhQ3WLN2ccyTMyzWAS3STR",
+      "spikes": 1477,
+      "signature": "5EvTiFxKkDBp897kCSQysDjnALYYYSbzzaZF33t9NsSWgPEnuXtRvZvdrinaHwmVF4qzTupQ57sVqGBPvurnZAkN",
+      "slot": 450153896
+    },
+    {
+      "window": 13,
+      "leaf": "2x7NwDRGe57pwbEj8J6L4eQVNdrBv5AA7joe3QeYVSvV",
+      "spikes": 1464,
+      "signature": "5ycxqBdngyD6WC5rdCiP2hCX8kSzss7UavSjtUHk8uC67Z5gA9SbAWiA13fte4mrae1pgqg9H6MXkbxzv7QczaJK",
+      "slot": 450153912
+    },
+    {
+      "window": 14,
+      "leaf": "58gnrJbbf2LTEQgvSut5uyh2iaRWbGHeNsnSaiaSaXJu",
+      "spikes": 1422,
+      "signature": "Jb3cYQVBkZ528fPhiG4gTXFv8AUZ7VCymqtAkatdSzrK9nCJ96hep6rU1coY9jWgaEgHfg4NkCGW6V6aFPPJDoh",
+      "slot": 450153945
+    },
+    {
+      "window": 15,
+      "leaf": "2K4zVhcUJGtpXEAoJD2vCxkijJmWz8veQ6dWfrtaZ8Wa",
+      "spikes": 1402,
+      "signature": "3qB27Tixhvq5aDUQQ5uNa7gWQyKFwdjwa6Lhw9tvt8MB1Gdj8afVX9xM6m1oJvbdafNk3EAzx9p3xvc1gfHerHft",
+      "slot": 450153948
+    },
+    {
+      "window": 16,
+      "leaf": "3xU6pTtdtBLjMsXr2eVxVPpEq68xaQQQpxmauFDgMR6w",
+      "spikes": 1360,
+      "signature": "2WxF2efatSRG96DEta4Dw5d5jSiC5z7xj2ULTNVypZhWmBwDXwwsXNxWxMPmSUzaJsSHDYbZaFwomR3n4P7FQhj",
+      "slot": 450153950
+    },
+    {
+      "window": 17,
+      "leaf": "4yujby8XeqpaGvoab5TnDEGfsqbDDX2uYT3VK4JbTjih",
+      "spikes": 1424,
+      "signature": "4GDMCpWyDimHWsGdQi5pXz8QeYFEvGTxGPH1WbUnJTQMqwpmf3xupLDYqH2ZsMAZsGq3B8YZKFS9yatHTR6e45Go",
+      "slot": 450153952
+    },
+    {
+      "window": 18,
+      "leaf": "6T3c5qMP4scguvMXuDkztWWZV86HGbMrTvqZeVk7yvzL",
+      "spikes": 1378,
+      "signature": "4c3sxXNj1vwoPb2M6zwg82VoHR9WQF6EigeUoBVeNx9krkPjSaATz4jgPFKiRLAPYBoLqBBDuWryEpa1oJWMnnJz",
+      "slot": 450153954
+    },
+    {
+      "window": 19,
+      "leaf": "BC8EY7FJKcFu1JfsFckWBdGSYPeHX7FgCATiSLqfgE9C",
+      "spikes": 1447,
+      "signature": "59s6WxzsdACraQJPhNt93jTJSDhqbRKYH9qihRRG5EBDqk7Xk3Zr3mGKaSoN9yqTDwVm47s4rdCzCQew5WpPbah9",
+      "slot": 450153956
+    },
+    {
+      "window": 20,
+      "leaf": "CcSFCv7sHQGs9ewUPYNZXERwdtnvwNj6iVtJhxMku4hT",
+      "spikes": 1439,
+      "signature": "2t75brPoNTFjCB2a7zyWrVyjNN2vvazLR9Lg5BXv43F9SLPKtB92vaq3AyqyztUMy488EXBYVETcqTTtt6UbcEXi",
+      "slot": 450153958
+    },
+    {
+      "window": 21,
+      "leaf": "65KLj6hVyW2wP2aWgcMkRrhAvPvdHM8kvyLKV2ykMLg2",
+      "spikes": 1481,
+      "signature": "WoEHQsGsemFVkh7Xay2PmupZvqR7hUTAbhqP8fKWUqhRZYYnqCS4kPN3j3aA82tBd58dxcAcErFdms21q4DDWBr",
+      "slot": 450153960
+    },
+    {
+      "window": 22,
+      "leaf": "8hNSpLMM5jC3N5yADquapMqGCYpjEBKD3iqyTNAjokyq",
+      "spikes": 1462,
+      "signature": "2ZC7W68FgCj5jHqERXBZGSSaZ72BergysLoCSn5hjgRxbEyrmBXgHmuo5Gcc9fVVQKzCwPnXJTw489qbiqv7HcRr",
+      "slot": 450153963
+    },
+    {
+      "window": 23,
+      "leaf": "AnHn6mG4hEYCSukzLP2hZUQT1SSWUzxLMiVXRvQqZfNg",
+      "spikes": 1445,
+      "signature": "5ewqBpb5aVxmNu4sH6vhvPKnrnFHv34Nyhd1TW5dyeJdcLuodFr1mZoSFbtoEj3cr1KAz2wQQu9Qnyo1NE6cGE4Y",
+      "slot": 450153965
+    },
+    {
+      "window": 24,
+      "leaf": "D1pMnvkGnaZpu7xLbnzvxGhDJ5QCZv693CMNyVcXouPf",
+      "spikes": 1496,
+      "signature": "4TZtYidwV38GA5EkSbzjKHXEZGbtmyztUo2jf4sVkUypjydhgCLgZsndQnsDvQ38PrwwEa2nnw992iRBGbUEgYki",
+      "slot": 450153968
+    },
+    {
+      "window": 25,
+      "leaf": "EYChgjxu3XfAXGyEyoRz8bSfueThv7dxSwvkrD2iVb52",
+      "spikes": 1478,
+      "signature": "5MmFLFdKvvoVnQdFaNWBfZkRfkCpkfaw34Ls2f7KW8eBE4NEVCV9rFvFyAKQw72RtPbsk5XbKQBWo4cXbWgSLFz3",
+      "slot": 450153985
+    },
+    {
+      "window": 26,
+      "leaf": "HC1LxtbDaoTA6D5uLKB6hV5WPwF8xZVCnAia99K5XWRp",
+      "spikes": 1433,
+      "signature": "2y5jrqPrqvQMq8Av9aho5XJw3KQZ3ndcxWEXEVoyPNTWRMCkWNo7r1Jhgc13inHVjfMopcmGsN7rLiBLG7UDqzSw",
+      "slot": 450153999
+    },
+    {
+      "window": 27,
+      "leaf": "GqCGLfYf8GFd634bDdyQSH4UKTWRkSMJwmyX1xJZj8rm",
+      "spikes": 1353,
+      "signature": "5V7d5iAbY25A5aa2yPe8HsTNRAX6HirwiDUdmFSUFizKE9vS32kU7pbS5HigKUPMStqpAwjB3ssnyxozRne5Lian",
+      "slot": 450154010
+    },
+    {
+      "window": 28,
+      "leaf": "9ihNMSaQPyDu7X3Fbg94e7C8fx3r2vViH7W5D5Uky4Yx",
+      "spikes": 1405,
+      "signature": "3VdHQXsUWHtsoTMYwYq62vHD1yyKWi7gomC3vZYDCUjm4ZGvGdhgyYUSH6qTLbGsNrXxYwvRnkEWuuStygTKgUv7",
+      "slot": 450154459
+    },
+    {
+      "window": 29,
+      "leaf": "6MVFy73PemQH89eVaC2Lpz4VdD41vowu78PRNaxFyx8p",
+      "spikes": 1424,
+      "signature": "52SRVYD14BBgaG6Wob5AYeCN2X7CQe8exS1bKe4C4EBS8Ba39bMr9XizTLYYFC6Z9KyQgkxx8zk1XGXhWqvSbqHk",
+      "slot": 450154465
+    },
+    {
+      "window": 30,
+      "leaf": "DtFU7CgyNhyErJC3hYsKcAf3GdrtaMSsRsVC1Y2tvCV6",
+      "spikes": 1475,
+      "signature": "3cipS8EmxX4ZVn9jbCP1kWEa47jUDt9PHwJNtryn1LtxkC3xAQyBRqqZwXFmuwVPo7ntoFkeomVhQrrLiTZZhjq3",
+      "slot": 450154471
+    },
+    {
+      "window": 31,
+      "leaf": "HVe4TxNXuALvfFgdvqgvT5MFFpgeWMMNq59p2pFkk4FA",
+      "spikes": 1465,
+      "signature": "4zkgZ4vkb4TQXCXRuPLPSbbEmZUDKDn59687m27yuzxbmY1Zr8wkpvisUTcgkifexkjQWBfL5DoLPBxFWAEp51MK",
+      "slot": 450154477
+    },
+    {
+      "window": 32,
+      "leaf": "J8rcqs7GGYLx8nwJQYte4CtFc767MKR1GPswGiYzPzA8",
+      "spikes": 1468,
+      "signature": "2tfPmmBuMafTsuo5BZR7S6jhVyXvnHHBjNoZnCiPMDkSzZgCsoiWW5UrnGojmS1kYVt1yPZQuar97ENc3XweoRke",
+      "slot": 450154483
+    },
+    {
+      "window": 33,
+      "leaf": "J5LHJSKcgXvgLsSQN7PH3y8CKqzR5CyxtjuAYuP169d3",
+      "spikes": 1478,
+      "signature": "56E1HHK3rLkz1PwQDZ1V9WjyEwEX1QUCsW4d7ArqvQveGiDi7rnbnSY8mJaSCCV9S2darg4KWzDzWCd1Sm8YVPSU",
+      "slot": 450154489
+    },
+    {
+      "window": 34,
+      "leaf": "Hfj2hT1w3wegEQKX7TY2Zj6Ef4MRheo6fsmRpWGGad6e",
+      "spikes": 1471,
+      "signature": "6224JkHCqTw1tVgRwEASykj9pSEpZTsH6HRuunJ7eCqh9KoVAxaDxkJVAV45SyKVjfeP1Uvsb19gW7tNkipPbgDB",
+      "slot": 450154495
+    },
+    {
+      "window": 35,
+      "leaf": "EwTij74PbSoHKscKLDiUhK3ndeTjmo5ZzKas4TX3AHTn",
+      "spikes": 1359,
+      "signature": "3NK6F7ZsD9wiE9tSJwDGs6896aeT4Y3DA5PMfWhr5eKTtdQF3Tzsi4dZDkjgqUE4qmU1onU1WdhdX7joVS6h3exo",
+      "slot": 450154501
+    },
+    {
+      "window": 36,
+      "leaf": "CaagFQ7cM3oAwyCVtdtyWY7f9keCF1zRiYymyuA1TCns",
+      "spikes": 1415,
+      "signature": "3ftN85q3PHtVpwY37EKhZu9xjPNJ4Hdihrn4z81Uq9CucezFobYUuknBoSoB3vrF6dxbHKBNQeg1ZeDnKARd2mn3",
+      "slot": 450154508
+    },
+    {
+      "window": 37,
+      "leaf": "Ak5AWJjV8jf7NKwwhPmpmPktXeq667aVySf82oRBf1Ef",
+      "spikes": 1379,
+      "signature": "rJtWwMsYN5vKvDo3MYgDyY9mCpQSGN1oe3b4pcJkESHYC6rB7KBH631W1HRxRraUmogp5UPeyWjhyn2VEb7gKVk",
+      "slot": 450154514
+    },
+    {
+      "window": 38,
+      "leaf": "2kjhkLpY6cBXGG5ps3BSDh6kfQJVStRGRh2hhNg5EBkH",
+      "spikes": 1504,
+      "signature": "5RNBnFVP74TxwCfgD6SsJrr5FXeGDdv8aKYCeuHte6ya5TTSJu7CNQCC43QVFnCrTgwEBG7judRVdRwGBzbh1d5G",
+      "slot": 450154521
+    },
+    {
+      "window": 39,
+      "leaf": "G76MMjTD4ECPi7s5M6Xto6u8n2y6awzcVWEtqRHa31e5",
+      "spikes": 1389,
+      "signature": "3yoY7qT1bqpfrsQU9q6UxiorXBzobKJNN8q5pbGPjNCoh3DNZ8aY31cfoumCBuUFnYL6j8Hw5M6up7b51zyFonG4",
+      "slot": 450154527
+    },
+    {
+      "window": 40,
+      "leaf": "3cehFY3ZgVYN4eTNBEsKkKziXZBvAyG84TqasJuRcKeE",
+      "spikes": 1397,
+      "signature": "5noU8UbFCvNQtLRKAiv8A2D6PhmWXpFj1b9pNb55ATziwKxukotWxiNfz3GqmcAZnpYtA6xLA2UBw2wnqzijqHWy",
+      "slot": 450154533
+    },
+    {
+      "window": 41,
+      "leaf": "DwzTak85uSyuMLWwrGJpfoRKxF6XQY8faQ3n5whjJjzL",
+      "spikes": 1386,
+      "signature": "5BV8apgqhesjoMWpciN1W4DcKj3DPPKBPoJeRCL5QZXYYWySW7nsfP2Ti3wi3SsAAUQjw7JQB2BM6jHp3fxXn1hx",
+      "slot": 450154539
+    },
+    {
+      "window": 42,
+      "leaf": "2ATSBHixtzQKXZUAzwLPhtX2M5BTzAKUtiGpkS3jyL7n",
+      "spikes": 1412,
+      "signature": "33KSwLSFL8UUWCQa44UA2uywwmzeAaMzDWKcedcuAkGsaCNWPhGwWvnv9RHj4h3RAkSfDe7KZwc7i3NdhkD7ZJmD",
+      "slot": 450154545
+    },
+    {
+      "window": 43,
+      "leaf": "5bN3bwd4nHbkfeBy9dvLE5hL1r38pUebcKRST8FdJYpm",
+      "spikes": 1474,
+      "signature": "3Bj4vmcPa9jjuzcftQ7xytngK7QHtB9obVeAuAVevrNg9SgwdMrq7EUh6FDXREEYwFxTb9hZjcfpP8UaT9Jy2Mc8",
+      "slot": 450154551
+    },
+    {
+      "window": 44,
+      "leaf": "Bqr3K4nEkE95WDF5cveYr33QW2ZdjzjN1H6JDZxNLeBp",
+      "spikes": 1455,
+      "signature": "5RFNNS3nBZXavcgf5sZ5PHDn9fQaa1mt1HjBbhdgYPAeesbAxQFpF6yG8rPKCNH33rQK22VAGqm3UZTRvxxsUWXn",
+      "slot": 450154557
+    },
+    {
+      "window": 45,
+      "leaf": "6PMbyKaKRtCbq5FRvu4L23Sj1LCDhSF3aSK8WwATSdvB",
+      "spikes": 1506,
+      "signature": "4QisS2wDbJHmR8DzgL1FbQPL5JMwYgEWpAgJV9U1H5QUPjyCtcXEoiBV8XQogGD6Zb64y4KiPUHUk6myGornMQn5",
+      "slot": 450154563
+    },
+    {
+      "window": 46,
+      "leaf": "GdWdmeqjWK1bqq536BV6AMtz6QzNKyVuiSLZ4Tv6dd7M",
+      "spikes": 1399,
+      "signature": "TSMWTP1R2vownNNz4jPbX88cowXaCpcbAHt73xhCFnwbEzHUQg3SCmiAzbKMiGfq5rpSVXq22eLLmiPiu3NUdtW",
+      "slot": 450154569
+    },
+    {
+      "window": 47,
+      "leaf": "7gmV8JKJCDEEZ9KDf1GSRe5wTC9WDhEvnYrnXjhmNnys",
+      "spikes": 1502,
+      "signature": "2DQFD25cF9L6NgvJqDTWLoTv3c9p8tZUS41Fa8aTATG46RMrAc7bdvMuafjisGPrggMbrdhG5yCN7eNQKknRN9Aq",
+      "slot": 450154577
+    },
+    {
+      "window": 48,
+      "leaf": "DVQeoHZQRcLRkC3nT8X5RUyBMi6zRVHGre9rHoGMJpHE",
+      "spikes": 1476,
+      "signature": "21Z58Ng3Koc4GMX9bjJgJAfRsvcjGBMm25PrFbf2qnpZ3U9rVoioEYo8ncRCMuaRUZrLHKF3CCRZP9ENowUfYcit",
+      "slot": 450154584
+    },
+    {
+      "window": 49,
+      "leaf": "F8FNEc7RpGdwEr1V9SdgMW7M7wHGS7z3hZxzxydakbQt",
+      "spikes": 1452,
+      "signature": "2nVF16HbRqi9aG9bTgsHbd6ccoozRyZ5FACNYgP8TbBRa1RiqeFNaPczzmX72EAyiHyHBqMzSWfN15atXoZ46vAL",
+      "slot": 450154590
+    },
+    {
+      "window": 50,
+      "leaf": "9Pe9qH3X4rUTaQ6d21fUBR9w3HWxpjs17nkKDnPSosvb",
+      "spikes": 1392,
+      "signature": "5Wor7dnvFAtBT1vsJMEeRr5tky2rhq7WbXNnFXuGKNAdcG9Sg5YCGKPUomuHW7ZNuiiJ4T8YBxNzqsN6sqGwjHR9",
+      "slot": 450154597
+    },
+    {
+      "window": 51,
+      "leaf": "58hEe65CUWPB5jfa2HLCNMpR5Y8BjiSJQN7t6gVKfNz9",
+      "spikes": 1395,
+      "signature": "3AywZtWmULoNXMrQuURsbfUTCNK3B89fBHoCY822NARzMComRss6U1sdwb2gbE27vFLG13HqECQbc95kgq1C6Y8W",
+      "slot": 450154602
+    },
+    {
+      "window": 52,
+      "leaf": "8wUcgLN4YGaweYKgEWrVw2cLJ5MFQifJuwzGkvrPuNJs",
+      "spikes": 1370,
+      "signature": "TdGq36ePGESNXZmYmtMngio2UkuwuEYbTiKRySzXkX1RKA495fs3vo2rdKDPsMiviLtQcob8xxFX2EZErwFp6xk",
+      "slot": 450154608
+    },
+    {
+      "window": 53,
+      "leaf": "JDT9VTxaj7NqomxZUHNneiFibkggrFENVGqtu4DvyLHK",
+      "spikes": 1426,
+      "signature": "3skqTaYEKiBXonbni5Y5rWM17xCnkBxMYdSQcwSgEph3PVdyNNV12kKZEGFvqqdWowhuBCE6AcT4eU6EATqNf2WG",
+      "slot": 450154614
+    },
+    {
+      "window": 54,
+      "leaf": "EBE3H8jy6PxmJSMF1mxDAb2b237QPoPbbfHagGTjW521",
+      "spikes": 1435,
+      "signature": "2M8FPyzMH8HDA7NXTyzEgH3DPEvw9hish88XhUcL1FwHWhfURNp6b3VnnkmP5aEYbrzH9UUuaxSmrNr3fRyjgG1x",
+      "slot": 450154622
+    },
+    {
+      "window": 55,
+      "leaf": "ESycYBuSMonWEva4qjhUjocGToXVXFPKQ3MZyAoNmTPe",
+      "spikes": 1416,
+      "signature": "3NFhGLm3rwXgc9NaSG3jxWr2SeYwpQ92J2UeR2hEbbUiahHfhE6ffRfCH3Tc4kL5CUeWYnCxMDhEdtj7yJbdXLT9",
+      "slot": 450154628
+    },
+    {
+      "window": 56,
+      "leaf": "AkuW2E217HjbYpqvdmvfvwY8dTrHenSETtpk6AaK21io",
+      "spikes": 1392,
+      "signature": "3bGoMSBpFtarqWrz8EexvxBxqGYbpVNdRTtxL5dJH7d3mhiBLcVsR8V8n5eieBqPzMbeTy8jBiYSevP42n9HB569",
+      "slot": 450154634
+    },
+    {
+      "window": 57,
+      "leaf": "BvLp3BgyQd3mWSi9CdovphPJcs4vDqGJeGo9czb88GWD",
+      "spikes": 1537,
+      "signature": "292eYojL6kCsrL4fMMGCGhJHoeMDRLPEeCR2rxykHiv9vzan4U4wr5SECG8xQzNp8Hrc2MP7KWSxw8t6WUEkhrpn",
+      "slot": 450154641
+    },
+    {
+      "window": 58,
+      "leaf": "Gio6StG6CbrTSHvaGZXmZLmGdu9dJDks1vPjMi7pu8G",
+      "spikes": 1411,
+      "signature": "4JSwVE5XX9zRVCRYaDEu81o57PvfSL3YVVUDHN3afpT1Cqiv8L4b9yj7sXZU5C8iGifXmyHWkFzNETCvgpfyCLEr",
+      "slot": 450154648
+    },
+    {
+      "window": 59,
+      "leaf": "EYdcmYFKrPS5NixqjyLuDpqHwXz4gbM4jqv7KR2b713s",
+      "spikes": 1482,
+      "signature": "5T6Fic5u1ubVuC2NbxLkEKbVBaksoPyiDb4tBkqXToSMQboB5CGMKWef76xFY3BvNZtiZgRNsEmtZdTexgyhkDkb",
+      "slot": 450154655
+    },
+    {
+      "window": 60,
+      "leaf": "BW1s2TeZadoR57kNcgdp9tGW7TLq559frdG8TXPqRG1t",
+      "spikes": 1472,
+      "signature": "oJSp5hgcvQkFRs1h9Cd4i1SJDcZ8ybDQ61TvtegwNGXQzkf4P3Q1v4mURPGQ6pGbLNUXuzY4rfjgxsQ36F4Lzyf",
+      "slot": 450154662
+    },
+    {
+      "window": 61,
+      "leaf": "FbFDVRg8x2CgrSzMz2hhYF5kUcXkg2qAfybnEtNYJrHp",
+      "spikes": 1474,
+      "signature": "27vyU1XJ2RvcdcXqZtEE4msE6xENjncgY4hsuen4vrZJ8HBHFwpXrRhsfrCrctCGWJ66BMBDVFRLJbUQTgGyY2Bc",
+      "slot": 450154668
+    },
+    {
+      "window": 62,
+      "leaf": "GzwDCMXDHVSia222Kwkjo4TZCjPQmarppq6bKCXCNcDt",
+      "spikes": 1473,
+      "signature": "5qGZv5MFj2NCAqSqMY9xKvsMv3ttzYN1v9g4Je8nLm1abREQqKPcbRDmdsxGuYJHcNAYZzwRxZECLfe1AN8XfDsH",
+      "slot": 450154675
+    },
+    {
+      "window": 63,
+      "leaf": "FYTpuApDgQDJouCcxkM8xkLbd6MAWj2G9P7UPs9WaT1w",
+      "spikes": 1423,
+      "signature": "2vu4Wq5KQjcs4hBDduXsxpwCELezu6FwTLcgjRqSGeR1VT3nbhdywH1bGMj2ainujLjUHAbrUmKYSWVbiPZdTPWC",
+      "slot": 450154681
+    },
+    {
+      "window": 64,
+      "leaf": "2ZTTqebroieoiSW1fhhfVc6WAzb1UF2P49NecBCbWHnG",
+      "spikes": 1379,
+      "signature": "2cG6gLWxKNdvX8MtFgDujMgHc8SDtAYGUBjTX39FYoSLyJaxXQcURRDR2DKyVKGgPZGofa65AtV9Xt5Y2KgrtQe8",
+      "slot": 450154688
+    },
+    {
+      "window": 65,
+      "leaf": "Bro55m8yLYsLXoSxzpskXjXEGhSa2DTvyT4kDE6qeXij",
+      "spikes": 1378,
+      "signature": "2Stg9DE21CH1UYBKuk6r8fEvAUwnhaHby7GLz1YDntcMisi4h3W6At3qmdr7cNg5Vtdu1kfQncD1rYtCYXscMnrE",
+      "slot": 450154694
+    },
+    {
+      "window": 66,
+      "leaf": "G3i6B8FHwG3kE37L6XhLWZnYBJxD7Nrn3qYP1E1yBsG7",
+      "spikes": 1368,
+      "signature": "4aoo2hQ7hQbxQTZpjFMvRjUNWipjUyu5y5VSJ5YfScbxVd6YF45cNCtp8dN6oUteno2g78gH5XM9wyQDsmCvB12F",
+      "slot": 450154700
+    },
+    {
+      "window": 67,
+      "leaf": "A8yduQJhmHgEWNFUwXoaqUJfz4aqLEwegq1rX9V9q8nX",
+      "spikes": 1399,
+      "signature": "3qxgWs1Y6XxrBCua27QZ2KwfvkFcj35YbZJiVtouLtbC5FG9Kv9PSsX8WfxVnt2MDL78UmxY3kAQWruWay3r9qFA",
+      "slot": 450154703
+    },
+    {
+      "window": 68,
+      "leaf": "CRhG64D9CPuZbU8TUd71AuVKV2XQhJXwtqRXKpVNXasD",
+      "spikes": 1414,
+      "signature": "66qNq7XeZDEgbo3roZHHJKWyo49GGKEN7KJBBZSn8xrHPV3zn3wYk4XjM4kq3cZSCd5zEc7gcSnDQTo81JSKQFLm",
+      "slot": 450154709
+    },
+    {
+      "window": 69,
+      "leaf": "EoMdd74bG4XojCQD15zfoGeC8FVPxbLCW3uXsDdhPERw",
+      "spikes": 1486,
+      "signature": "3D4uKgQAuG5Cj8kYT8hHEpfhLC1vD3kuFw8Nd1uSZvU9mJaF9x87pAqwz2oLjfpsDs8j1tA3vJY8FPaHZU8Yw8RT",
+      "slot": 450154716
+    },
+    {
+      "window": 70,
+      "leaf": "HhnFedWbAqZgYmeWnefH17SQCUKaZ7S8NwH7926K6E9Z",
+      "spikes": 1500,
+      "signature": "7FTMEEFAohUnRGiZmZJh43XW3ygfRMNAQqPufsBdWwFr4aJnJe7b8sbv7gGFHkyY4PvftpQ16fc2TLEtccwsYQY",
+      "slot": 450154722
+    },
+    {
+      "window": 71,
+      "leaf": "DbRfusZmf7nhDZ48c3vztuyzHm8p4rUFLSQicQ3XZL16",
+      "spikes": 1458,
+      "signature": "3KrrAy1iDfzPF1C2QD946p7WoNHnD9aSuip3K2h5S9bm3hMh92NJ9HNdjUAXkCvsS7HosR2MGYfaU14LCmYGjPei",
+      "slot": 450154728
+    },
+    {
+      "window": 72,
+      "leaf": "3xyimJHWkZTSTDQgt3cFhJH4XWdFWeto8vZmxt2t3sFK",
+      "spikes": 1369,
+      "signature": "24iDGNveafMMqsx7VsHSfoesvA7yBHzZUoXt4ADQNcvvoQw3xiqvt3eA8BqJEfbcgaV6CfxHte8brURcqF2vHasg",
+      "slot": 450154735
+    },
+    {
+      "window": 73,
+      "leaf": "FRRRieJ8pCWkfAmQiSLV3SQseZXy9RiSzbAmrob2EArV",
+      "spikes": 1384,
+      "signature": "4etEFSJMDhAC2kHfV8p9HDdAaiGF8fSAAvqRMgtVY1tStcdTiHzBeeHHqo1ZcYYioJM3eNEjBQp1jLjfzdoexkk",
+      "slot": 450154741
+    },
+    {
+      "window": 74,
+      "leaf": "4ZDLJRxPEa6ArdAW1ruxgwD6p8zoD94Nn1JRZodHjWEy",
+      "spikes": 1400,
+      "signature": "WDpSnTTAEAcKAXywP6VumS7tYKL3dGVCpV5ireZTc8xFz1oNBk1AFyxvYo2T3JizKMQN5okjepx9PBZmU8P1MHK",
+      "slot": 450154747
+    },
+    {
+      "window": 75,
+      "leaf": "7PxBtvZnPFikN8Gk2S32nayqo3YVAP84ADpx3zqf2Jfr",
+      "spikes": 1372,
+      "signature": "3LdEJabpwg1PJqAVjKEZDTVKvokhGgyUvij6juqXJpnACagaqVfBdcdZjNNsct4L1axQUwnWnuS9zyHU13r4137U",
+      "slot": 450154752
+    },
+    {
+      "window": 76,
+      "leaf": "9fQyDWdy1aqTAk9qWZdEgJdoFek47UxR8ov7cmgySTXD",
+      "spikes": 1442,
+      "signature": "ys5kx4bELNkWyiRLncuGUeDzJ5xvdRa7ebVaN1nFLk4TYoh6UXSzrjmmFU3HSSE3d7cBbpW3cTKwqtVY6urALjd",
+      "slot": 450154758
+    },
+    {
+      "window": 77,
+      "leaf": "3dAUgjvW7hi3S9E7RrzZATyTF975i5DEt4FiqfVtsq7Q",
+      "spikes": 1419,
+      "signature": "56naSFtQrU8aUfo17XxPFgnkwKWu9jzBQAKk6XvFbbZCvZiycoDvSAsMXrDWgfD18dQNW6K5Bt9G95ZpZiLGwZqi",
+      "slot": 450154764
+    },
+    {
+      "window": 78,
+      "leaf": "FkzQ2ZzG6doyUSeP1AjB8Yy74H1WcYxQHvtKRJYJLtKw",
+      "spikes": 1438,
+      "signature": "5RoUSnmEPGW1uoXoqEp9zgcQ8GyQWd7PR2AMDPmAuAdDL24derzXDEymVkXCVhA7j46WkhcP5tRyXMRdgMDLN6Dg",
+      "slot": 450154771
+    },
+    {
+      "window": 79,
+      "leaf": "FZkxexBDFGLpk3dYnrLZfMJKa23nPdrEZ8mm1u2oGAkP",
+      "spikes": 1483,
+      "signature": "3BND1Vzt3H2Bb8zugF6HMr1fkX8Ty1fnDA1TMwELHPbdDoSSYbvj1LM4AqYJszvNqSd8LPEdHAkMv4MZMqJw3JQS",
+      "slot": 450154778
+    },
+    {
+      "window": 80,
+      "leaf": "FWxvibPzZRXmZ5RFbiftCYB4aQrH2ir35bKfG7XjWFyM",
+      "spikes": 1469,
+      "signature": "4ecRaf8aoqDfrHrXZvNGbbBn1fykR3bGQ4EvtdN4Q8Sw6WBYMM7hpv4gq6An9f4YDHNeEaBQs1rvMdmDXUrK6CPz",
+      "slot": 450154785
+    },
+    {
+      "window": 81,
+      "leaf": "8zxrHnsTK1RgDUHp7nY1sdCgGpgfAxegggkKf3P6MfeS",
+      "spikes": 1447,
+      "signature": "419a9gH16ThRNcsuc3uQS31Q9MVJaG6FzCnkzfAcjjbrEFxNb3VeZPc4c5LydY3dSkS2BNxHx9Bajg5McDSCJfw2",
+      "slot": 450154791
+    },
+    {
+      "window": 82,
+      "leaf": "ADjYPgmVDovYa3Zj22PPS4Q3Z5gQWAPk2ZJavcfxofPL",
+      "spikes": 1439,
+      "signature": "4BJK55g5NDWhh1eJkicPcyiQP7QTLqeJFiv6L93CNNypee9DpKfBWjoHEfS6bh8oEhqS8ZHQf7YFYfKxbSWK4NhD",
+      "slot": 450154796
+    },
+    {
+      "window": 83,
+      "leaf": "EGbJNCZ9abN7VhaTzS3tHL6oS5KCArc9oy6Kjvn8ERNW",
+      "spikes": 1397,
+      "signature": "3n8GghiJdqRkhFj6j9fvxQszZ3QpDUSA6rPSEDRVm9HBJRUXToUGySQhNUKHjPcm9QT7UCT9rPoxYp8BvwFf86zj",
+      "slot": 450154802
+    },
+    {
+      "window": 84,
+      "leaf": "HyBnxWXqezULDmwdi3PLJMb2iJfz6ZPZYDb3arXyh3vp",
+      "spikes": 1352,
+      "signature": "58WskU8ubTDLtLS78zkE3vgQtz4uuiSvvWVmZGbyutJTYYqWKyFAjXoFYXnRBvmBovovoDUMVZNDy3f2aUzVwVmD",
+      "slot": 450154809
+    },
+    {
+      "window": 85,
+      "leaf": "6t92va1by9Yo6a5ByjobPffTWnqYSRQnHx5eye5mWXZw",
+      "spikes": 1417,
+      "signature": "54g6TLKx8LP3jwFCQF8ZY4nsvHxJPxTMPuiE6t8yYYFoGyMLrX8T4VYaw3WmywBKMpYk6tyjxdWFbAGgZJg27nh3",
+      "slot": 450154815
+    },
+    {
+      "window": 86,
+      "leaf": "CWQ5mjmQYw5DDjCWyUiTVjzwLiJTZwbW1M31BYCJUMSm",
+      "spikes": 1423,
+      "signature": "4RLEezDfVtTuLL647BDxbofHtdaAARpJFVfZ9KrSaLBZZgAWSUCMcQYpiDnoUiCoQWXCjPLB7rkWmFJKnPqcELTz",
+      "slot": 450154821
+    },
+    {
+      "window": 87,
+      "leaf": "2HiqkwDySKgqBQ3c5HjHoXWxpw7niDA7VUV1DxKb1BBu",
+      "spikes": 1415,
+      "signature": "LWjXKCTxj4fmFyRqt4YRHdqc1HCHq2ad9guLLT8971Mmrp39YGqRvzVcXq8nwkyLFTjDP4p5TDEPWjbHNtohTEk",
+      "slot": 450154827
+    },
+    {
+      "window": 88,
+      "leaf": "AcZtSUbXZraVtB1JRj8rCFoX95iP21btxAt7hbepSSZV",
+      "spikes": 1401,
+      "signature": "624nUSEh6nmFA3cQbZigRkFLLNYTgfLfT93CfhZG3Gskc9PeD5YNhyAGWrjeGtx7inRN64b68DbEqNBFmDi1M1FS",
+      "slot": 450154834
+    },
+    {
+      "window": 89,
+      "leaf": "7RiS9NYWyMDBzAqxVN8ouHhZnqLG5KuYjFB9xgg3VdTS",
+      "spikes": 1439,
+      "signature": "4hGHYcQjpnzpd1GHKLCKKftgV1k7LbmJ22jz4x7io7RmKmgq4aEXTQmc7M3UCChjYVAjYdjjw9a3tsBfqHBDpMbg",
+      "slot": 450154840
+    },
+    {
+      "window": 90,
+      "leaf": "8R23eqewueCid75un6wrrAt8pKbViu4BqNwYLZdR1SMq",
+      "spikes": 1390,
+      "signature": "3N2T5QRD2sfPHE4LSy7kXrY2XmsJt2czs65jhwLWoXLtwPsXCRngQocA9thotTSsaSNuDGVnhG4CdDP8jE4JJP1Q",
+      "slot": 450154846
+    },
+    {
+      "window": 91,
+      "leaf": "HK2AVYngM7VnaCgxrbX7tsnYsjntEVwWKjcbbQcFM2N",
+      "spikes": 1397,
+      "signature": "3gwDWE6FPeKuQRxCVzPbEC4bihNBJ2EDLJuijDvehLKCHCHudurA2wEuJVsGQcgr93esEUYajsVzLoqMSH5YucmJ",
+      "slot": 450154852
+    },
+    {
+      "window": 92,
+      "leaf": "J1rdz13X2hhzm9ShUNjmrp533CT2EB5ZB2xjKHMyirvA",
+      "spikes": 1417,
+      "signature": "5Jc3gQwff1v7A5hjCb5ba9eAgyBiytKspHNziqbZsTdcYEsHETmKhpqYdaPdWx4J97oNx42NKVr9AimfhgB8grjJ",
+      "slot": 450154859
+    },
+    {
+      "window": 93,
+      "leaf": "HsAjCpMQ6rnNyd4QaHhrXEFooQikEn5GAiFQGtRCY7ZQ",
+      "spikes": 1485,
+      "signature": "4tciRyvuMnFmCtGWoijn56A4Cai6D9Bx2JMbwSMz6WhaUrYzcaCMUx2A79S9sZez4qxMLbg2EstSEijPqttS3UfT",
+      "slot": 450154865
+    },
+    {
+      "window": 94,
+      "leaf": "GGw18tsXcPVr68YVoADBDnkDyzUAQUrsQcoo36Bhp9HK",
+      "spikes": 1430,
+      "signature": "5VEhJciv5haPpXhDvyZDNi4MU3aRbmA2T5so5bL3vN5aSEtTUyJ1eD3G1QSALfXBnRqFF2WekUwc2Ffg9UUgPQi2",
+      "slot": 450154871
+    },
+    {
+      "window": 95,
+      "leaf": "AHviXF7jc8sWfECfir8KqmricK26BpYJ9gLBcprqSWiY",
+      "spikes": 1466,
+      "signature": "2WCzjESAxCj2Mn17zKZ4F3fUnCPUGqaAsuhT1G8NByZ1XpRcxzhGB8zHcdCJRfGAFYNa3v1V7TZtVUuY4RtmSnMj",
+      "slot": 450154877
+    },
+    {
+      "window": 96,
+      "leaf": "3Hk8J8sQr2jR6wXJhqf5u9oXJXizJtZw3rB9UazYV7rA",
+      "spikes": 1486,
+      "signature": "279ZdrGoMVVoru5Y74782UkiAeuWAvGLv3i88hxd7upLK56HwKdUXCMNwDYpP8ARHG2YUMLUPqEW8xvAyzS7McD4",
+      "slot": 450154883
+    },
+    {
+      "window": 97,
+      "leaf": "FF4Yk57Jj1oewNauE4abD9hVsq6BrpFKxuTQiiU9F4jW",
+      "spikes": 1476,
+      "signature": "3vhjYo2psgD6syi5U1fL1Kz8w6bnEbb3o7N64BnsAdwqVXTHgXMGsrr4iKpYeRVuUVQnJhM46q658FpJVkqex3PM",
+      "slot": 450154889
+    },
+    {
+      "window": 98,
+      "leaf": "H82wNsFy9GMXQy9xKEzonjJ29TsX5Yk25v9UFQCNiko6",
+      "spikes": 1390,
+      "signature": "59AqcfqykQvg8WfSohMqQ2tjqZRS17XiXK6d8PgxfDFF1b2epq8wYxfTgmo2Ru35XZuH2NEvwjU2shUoq6MrPkD8",
+      "slot": 450154894
+    },
+    {
+      "window": 99,
+      "leaf": "pqtqkGXLGRJeQgLmA2ESE1awqadjshaucw7UmU8G9r6",
+      "spikes": 1397,
+      "signature": "33yxwzBy7bY9tz38XyLXVzMED8Mb1eDyZumwJh5DogcbxSPawzdeV6BoyS9a9NWTZ4WnWrhPgEiWBnzLSqixKCzr",
+      "slot": 450154900
+    },
+    {
+      "window": 100,
+      "leaf": "E8VSQg9G9ibnpadjYfmCRvhn2GnF26NQ9NYa4L6matfy",
+      "spikes": 1401,
+      "signature": "258umyfKuQhHmKQzvp9D4CwdLXDT1NG13hDtfHEHA3PM5X3BTChsLZBipxMPvG3vPpiCV6qFjaiDuG7YpUtfW1P1",
+      "slot": 450154907
+    },
+    {
+      "window": 101,
+      "leaf": "Lsn1UvuT9HgcmQfFi6pLu7zDjtF2kEmUck8utvCbTtg",
+      "spikes": 1431,
+      "signature": "3eRh9Jk2uckWzY75DdSRaU62hocJr9u6TbTingzsW9keDsKVa3LmbyL4KW998GXsCeW4Az4cgphmYqfYZhfLgqQH",
+      "slot": 450154913
+    },
+    {
+      "window": 102,
+      "leaf": "6tcrVLr9GDW8SFAGUj1bbcf6yx7qxGRzVsmco3WCb8po",
+      "spikes": 1397,
+      "signature": "m7TpsowFkC5DpifhBSu2ug77vuCZnoNd21KGXAxbuuFZNm42GyZ3xobY3cUsvQufJut9D8B4E5tvGL4iXHKPtwE",
+      "slot": 450154920
+    },
+    {
+      "window": 103,
+      "leaf": "EFFpqSELKLcJCsqJMgVDRdcvjmagJ4wBsKsES9ucdGce",
+      "spikes": 1445,
+      "signature": "QkbDr48Gxrf4gxs1TP825Ff7GEvDNDMfjpDLEKvNFrmhBcXLBUR62h66SXn65xTWDCcFAzqKFsaQd45YmVteUKh",
+      "slot": 450154926
+    },
+    {
+      "window": 104,
+      "leaf": "Dn1tvww1miQTTBcKPFtCgj938fhDMVYuvbygnLUT9yuc",
+      "spikes": 1441,
+      "signature": "5KDECJhS5PUmXqhCfNnEcHKvAVhELPovP8NSQupVRVdZtxB2f5WB6izWZkZ7eMPkgsqCGTBqdGYaKtak2TYGi3PJ",
+      "slot": 450154932
+    },
+    {
+      "window": 105,
+      "leaf": "EYDTTP3id8N4dqQz8fSTFkGGS2TiEEjhMramoeq6datE",
+      "spikes": 1496,
+      "signature": "2w5zRp6jWXTjqAiT6CYnUjbP43H1sEVGGU7EowHNS2mgA3fbndvuP6nYM8uRcw6T6YijjBWZ6afQFtcPKNKTUkS1",
+      "slot": 450154938
+    },
+    {
+      "window": 106,
+      "leaf": "5a2XBhDGA97bbQyZig22yu3T5qCC9p7PtwJ21pRgDVhH",
+      "spikes": 1453,
+      "signature": "3ToReLr3WoAuK8kv8wmbBFRULSUV9xHMTkD1SvWujAFGGNB9ymEy4hC97rD8PaQFAcUs1nEWuMK6e9Qa2iSCPfmx",
+      "slot": 450154945
+    },
+    {
+      "window": 107,
+      "leaf": "JDdYDgY5jnWSgwynXrSttTChwdutiFt8gXTuyEjC17XY",
+      "spikes": 1384,
+      "signature": "4L2EThvem49zZUpzg2DM8FYMXFz4qd8QdU966C9LGoaTiCwQbzoJp6DizZ7xJ8Aix1d8WAeZpY8Z2x65hSFinP2e",
+      "slot": 450154952
+    },
+    {
+      "window": 108,
+      "leaf": "BU6Suc88HSfzWYAJoaGjcmZvCCGT78NDkZjwh6YG8zCc",
+      "spikes": 1396,
+      "signature": "5QZzxFQt8AKFymRzrEnyR6i2c5XsstgFpZrDPg44xj64mQDKGDFEciqfZw4hN8yZ6G5iy7jRNbFJV5kRmzGLB13w",
+      "slot": 450154957
+    },
+    {
+      "window": 109,
+      "leaf": "3qoihkSWJQYMR6fz4oG8UQNWaqrsgSAjjqjc4BM7m9BQ",
+      "spikes": 1392,
+      "signature": "332yGLyDK3oiZrYfKMkj124BG25D4qGZGYGoQYTgc6sppraq6739u2JzySE4FuisiJkRf2JDg1zxC6aqvJmEo8tx",
+      "slot": 450154963
+    },
+    {
+      "window": 110,
+      "leaf": "2oPrANGq4fPVCF7cTDATmESvxJJY9W1cCJyJYdXiQKEg",
+      "spikes": 1443,
+      "signature": "3KYdSGqLtLHyTijZXZKGrUiwD58X9ubwrhTxdWriaGaekDBiHMcdosWMkQT4X1nFxpqhvUn9mpoYRSXUUSkXcnfR",
+      "slot": 450154970
+    },
+    {
+      "window": 111,
+      "leaf": "HbiDzTihf9EyZWPFB3Z5FW1A92QoK5rrekbAqAV8PiKj",
+      "spikes": 1378,
+      "signature": "2Lumvghz2gVzbSgSjQjyaCu1H9NwGomBoBp4ZnPMnadGZ1NttsSqmTFqu9pNRFCE7ypCSomTTNfJwmyPXaKgdFeb",
+      "slot": 450154977
+    },
+    {
+      "window": 112,
+      "leaf": "AqvxzEewa1evcNRTUuY1RTTfNXnpi1AYQnfSf2e8KZCM",
+      "spikes": 1455,
+      "signature": "2YkCkqTsVDrsse3DuKTYWVPkCq299X2yVERwn7GG11UMHzdbq4xVeELVzce9uX7XxW7f46c38JRQ3beA1qKEZuxt",
+      "slot": 450154983
+    },
+    {
+      "window": 113,
+      "leaf": "6bxuZJXtAJ1a9wbiA7H6f1bVCfhhmYfKLxsE8FenxQja",
+      "spikes": 1500,
+      "signature": "4M8Wxrjwnyag78mKJNRMuJsjyo6NrJ8jdH3NsgVy77Tm3hEJLWGtMUdADUWneMHZgHWWQdzauAy2nKJJvTQXhH28",
+      "slot": 450154990
+    },
+    {
+      "window": 114,
+      "leaf": "5ysreixoGwUqKaU5ZiiZCP2UGaqAFE6mUesr8DJzvjf5",
+      "spikes": 1494,
+      "signature": "4DM6RuQv9f2Q6ML4PVHAEL8BGQZKnWSFwGUzcFPMu5wa3LSBiyPS67fedCrBaU4rpd81qKb6WEZQVgbf6WDrVVBZ",
+      "slot": 450154996
+    },
+    {
+      "window": 115,
+      "leaf": "FUW6MDwCpHeAfKraMx2As4RqvBK15v7bdh6iG3rDDqro",
+      "spikes": 1441,
+      "signature": "3GKK3QjaaBSuVd8DsqS5GTzyJ39h47EcR1R4gh6299NkxLsyLdBrEdXeATsj25REXZLkxYLpwPCAiq84MrKXToPd",
+      "slot": 450155003
+    },
+    {
+      "window": 116,
+      "leaf": "HGGzYNM1tiwfHWegB8CbYL7vr5DSuNaeptzwXSFsUsch",
+      "spikes": 1469,
+      "signature": "3ePgvUzuLXxTD125QdHSYLFKXq2LpZFvvJPNirxsP8NJFctZgoJRC632TqdHJP5YyAD96D4Uwu3ya58wEZYvA3hT",
+      "slot": 450155010
+    },
+    {
+      "window": 117,
+      "leaf": "CyEij8KoraioB4PVPhXm1KTadhZS2HyT4i5dyvXjXzHc",
+      "spikes": 1466,
+      "signature": "4sW1Y9UA8DHMj7jnMYWv3sqyZNYUgsyMc25WRiF3sAaD9WPZXPms6nGSQYaYEsRN16fvavNHnqwv5SY2SjWMMmwa",
+      "slot": 450155016
+    },
+    {
+      "window": 118,
+      "leaf": "AyFYohkcbDcYXeFQuuKeZtegZTJmiHmeiedVE82QJdXb",
+      "spikes": 1375,
+      "signature": "5K5tMnaQujPNjTzLqeRCDNHyV8g5y1vnEadrtvmny3Wfj83zYMJXaCtvWPZANTZprL54xA4VkZNEbkJ94qrE3VuJ",
+      "slot": 450155023
+    },
+    {
+      "window": 119,
+      "leaf": "3HhT6nCbw4aB2FpUc42FnZeFcSTd8J531QZfkTjVdeJL",
+      "spikes": 1440,
+      "signature": "2AYdbpT2ATvvnGUHb2vdX2SzpY6A72YSjYY6GypvVySZytDsZ3e1v6ZxF3LshF9muSq4Bphudqj6ybax76yZgBQR",
+      "slot": 450155029
+    },
+    {
+      "window": 120,
+      "leaf": "F9htSXRrXrmAq2AxvSZ7K5tLBmnptfDrXnyLMuocHd3t",
+      "spikes": 1360,
+      "signature": "3FxXPjH23x1r793QSmmx3U64twRw9LqEE3cueq3Uh56BdpjbzDJ1QGfse6AjJyFvQJWFUnS7Y9K4Xj6RCqEmEDup",
+      "slot": 450155035
+    },
+    {
+      "window": 121,
+      "leaf": "321izrCH5xSBbGdjPQfDJ9wez7iVJCgC4BT6bbyG6fWb",
+      "spikes": 1392,
+      "signature": "tFuzavNgM6pZp6uLEVpdRdTkqZAT2Q4tJ6FU2k2LdMAgnHRgnxniuADJTx4pe8pTx4tvjHALJTCBRubgEZDBJaX",
+      "slot": 450155041
+    },
+    {
+      "window": 122,
+      "leaf": "DHfT9D6KpUccLtquCtWVr7SBX8cBeijyLPK4eXViHZcv",
+      "spikes": 1361,
+      "signature": "3fqXBon4P6BX2te5kMktznHRRHERp9UDfxSUxo5Hqk8QNvLTFLWBViMVy2uMS7upLNyD9mcEjFXzsMbJ8gvFVkLE",
+      "slot": 450155047
+    },
+    {
+      "window": 123,
+      "leaf": "4f1fbKzAWVjPNbHdGUNp8tNsdXBMvpmQFosnPGxFtLJ3",
+      "spikes": 1406,
+      "signature": "67cBtMEiZDvdzHtirwQwY3h2F2CKqkAZBcrqo4gu2HAecygtNqzsm8AUrJH1sg6BhVL6rU5WtUL6329z9CSELBeR",
+      "slot": 450155055
+    },
+    {
+      "window": 124,
+      "leaf": "2g7iAjUxb9hEgDPc6uEuV94hhKNGkVGnzYbY7U9hqqfJ",
+      "spikes": 1436,
+      "signature": "5V2tgvRveq8CPznbR9kv5fVueYGVpuhT7rzpcN9zDWqi8LVgufma15fNa6kYzpZc968LCXxmfHG2m5Zq8rxq96JR",
+      "slot": 450155061
+    },
+    {
+      "window": 125,
+      "leaf": "JDvbxZ1W9oFDunDdD5nXQgMr187AQDtTcACCzemeJumc",
+      "spikes": 1442,
+      "signature": "2uxczyBCDTg3UUCev1DeN2T9JrNCJebKNdLGdjuXhp47zyEhph4MJJfmVJrjHN1NLEhnG93yoUt2x3mYaHmQpYg8",
+      "slot": 450155067
+    },
+    {
+      "window": 126,
+      "leaf": "7tkEVEpEWuF6p37q4hzgpEbWKntXmCXvHowHfWmBoRzc",
+      "spikes": 1407,
+      "signature": "5sTTSNiH8o7Lr6ZrApLBDZF9LpdvgKfycgec6Ro3iyYxzzPVHD76HrBDDRW4GkgbVeNSStyYUNGDGmznmwjvUkpE",
+      "slot": 450155073
+    },
+    {
+      "window": 127,
+      "leaf": "5mArZRhn1JjrJC9R1iZdyYn6ik4RCkmDLWCMEKXHF3yz",
+      "spikes": 1554,
+      "signature": "vBW6YFxo7GezmnC8sjpzJBmUNpXGypapiWqjzbJL4sRtxrbCz5imxnGWbjtDVqeUzzsSvSyVgSXisWgdGJBKS49",
+      "slot": 450155080
+    },
+    {
+      "window": 128,
+      "leaf": "36Kfg7MRgJpdv6y8eTScgVSESnviN7XohutUHsAoXweW",
+      "spikes": 1394,
+      "signature": "2eqainPzskiCfdnr3zNtJkDZzahcXehRmW2J7Foq5TdawJ8E1DLhXkVRh6RwFJHyJ4ao5ZCSMu6HdCm3FfugPQuW",
+      "slot": 450155086
+    },
+    {
+      "window": 129,
+      "leaf": "FU71WVwVmPkjYBxffgRiSUbYKJHa3h1sDZwXrFdQobMJ",
+      "spikes": 1449,
+      "signature": "N7YnU9PyHmAS61pgA6kQrekatC74e6hUh45vi4SRugYuh9RGXHNXSrC1AFsYtijzM1zPG575XWg8EagreHm4qwS",
+      "slot": 450155092
+    },
+    {
+      "window": 130,
+      "leaf": "ArWzgBE8yg7NTyx2WU4D3TuUPfQVsQ5rUVMqWnJUES3V",
+      "spikes": 1395,
+      "signature": "2ApjqWQU6K2uL3RbKkkArJL8wxBQASAjxVdx1c1WAa1XNyaa7iqSZvQN279ZEovuWPywjquiw3qR4kLf1sGTMA5w",
+      "slot": 450155099
+    },
+    {
+      "window": 131,
+      "leaf": "2b8mWyixZgFcqrzMSFWJ8NEAdGoKjHEyiF3iDvN2jDqb",
+      "spikes": 1460,
+      "signature": "2qm5merTJbUKUEKmvgPn5co4ym171ZEiFv5Lmd15RLXUmdV8JBu4QAHgCNsjeNzK6H1EuXf5ZVKsTxmbedeGXeaa",
+      "slot": 450155105
+    },
+    {
+      "window": 132,
+      "leaf": "BsHAUgComew7dcr9Kvp882bTRm5K35ckTqUNUrXyBChz",
+      "spikes": 1395,
+      "signature": "5aMG4Qfab9RWSZmX7wAVvDhp4CZZ8g6b5csp38i7uPBVqZn3nqewCJkrr1jd9XKbzL8mJSZuGRX2bPsFgM1qoDHG",
+      "slot": 450155112
+    },
+    {
+      "window": 133,
+      "leaf": "8d9Y6ABJ8icCKCA15rvr8HP6v4ZfKaWhWMtBp1YCSUNf",
+      "spikes": 1369,
+      "signature": "y5EENd1MKrAjKWn4SWMghwZ9RvbNMqLo7M5X5dLaSFboQ7C4RUsxvqVWfBCoADJTYrGYPNVqZ7BP12N9gTXbARb",
+      "slot": 450155119
+    },
+    {
+      "window": 134,
+      "leaf": "CDMhvzF3rntiidPLdECM3RxqZ2rHxJ217PzRgumRX3X6",
+      "spikes": 1377,
+      "signature": "hzMt4hvBy3zqDyqYbMqDBNqfJjj5yt8VxtKH83jaRpSo3eAJEFcmm2iQAVNRPffdkPqXQQj34bm2d6F4ZprJUCe",
+      "slot": 450155126
+    },
+    {
+      "window": 135,
+      "leaf": "Dg5P5odmw1MU8RueoHAQWgG8geWdSeo6JWiLMzcPd3LC",
+      "spikes": 1407,
+      "signature": "3K5hBbANbMCZD6wdoEdBPGknKkvhZ4hR7oacXen7hVBGfXAS33g3V9pJtnZeNZxPvq22NBQUqGQM7NizQqeHVrr4",
+      "slot": 450155132
+    },
+    {
+      "window": 136,
+      "leaf": "3VfybhBkWBFxW7RKmDKgwrSKAHG5yJbAVUMMi5hNWAQE",
+      "spikes": 1497,
+      "signature": "4Z3zZDb5LMN6hCx6jZZK9atgDhxmKtiimVqUz2oi9VmuQ1b1gFPbcMApSjfu6wqgZysfJhfncpFMC5JnzssXaThF",
+      "slot": 450155138
+    },
+    {
+      "window": 137,
+      "leaf": "8uU9T4uDAd8WzEhYfj8yGtw8TJV4PH4CWALL4wEJBv8D",
+      "spikes": 1453,
+      "signature": "54ProFSt2WChsApjUfvV6ui6WAFoAGu5uPrrU7vZbmxZNKPRruyiQiMgGnmCpPbnUgt3YLSDUhK2oG84FP36oWWh",
+      "slot": 450155144
+    },
+    {
+      "window": 138,
+      "leaf": "DuoXssMk2ccghn4PqRHuXKnkqzVTDny8TgraNaofi3sC",
+      "spikes": 1451,
+      "signature": "48K7s4yoTvrdZdj1D1Rra2pfSRzzwPS9pveMqEKE9fA3L9VLJz6LHfazUEruy2gTGw919SERFqWRgHzDvqoGd6sk",
+      "slot": 450155150
+    },
+    {
+      "window": 139,
+      "leaf": "9syTL4rUUPrU6xYV2DFSpyvNj4hGYsvKJiJzhndw1ecV",
+      "spikes": 1366,
+      "signature": "WxNYrgDgAAvqpRfvdBBedqWJbPyZAinqZsmKvNy3cceoHfoUkBZPUxjZBT4kWkvnaTfa5A1tafqGFodjg3VyTHy",
+      "slot": 450155156
+    },
+    {
+      "window": 140,
+      "leaf": "HWTUM3TTq6U4A8t5PMh8etWEXFdsA5WMwA5fWq7jowB",
+      "spikes": 1445,
+      "signature": "54sBzTJB6Yy9hShVYR1zNMMZ1Azfbj3xeAyXPmsMcLrb4B3UyQTNKnTcNnnJKebNE8A6yokVinHp5EveAdPrT7DM",
+      "slot": 450155162
+    },
+    {
+      "window": 141,
+      "leaf": "Hjx6uz3VAGYZyBTrTpcd4YA2FEnuSosoBMePmf1wYmgQ",
+      "spikes": 1412,
+      "signature": "K6VkKGorWGvCvj6qkXiPjeMgH7wvEm3cC8cGVMRFAUkYFEQTCYfMDZf8QnFjkBVHB2V144PVkfq8zKNjsGb2Vko",
+      "slot": 450155168
+    },
+    {
+      "window": 142,
+      "leaf": "9G9xYzPRQG8SP497HAwhrvHL2RUKbwZMeZssET26t4Jm",
+      "spikes": 1458,
+      "signature": "3kWTMszB5SEp7Ms4BDeTyBYpKJAb9D99wq9825f88tJqN8hz3if78mHkgPsKtasjynhWv2GyvoEu618LgvEnHih4",
+      "slot": 450155175
+    },
+    {
+      "window": 143,
+      "leaf": "J2iyWQACB9i8s2xXyDtWzdvRY36UFjJdknzuHfZJTqCH",
+      "spikes": 1371,
+      "signature": "59VwMnp9mVUBkEMir6h1nFL4QRxpnowHAMjrg1EeZsuWCYnuznhPFr2wBrEgZf1NT3Gx5jUHt5cAKGXjC5xe97kA",
+      "slot": 450155181
+    },
+    {
+      "window": 144,
+      "leaf": "3y4nU2diGJNsyoMy4r6ms3tdHmMhQRMmiKMnwidNQLem",
+      "spikes": 1426,
+      "signature": "4HKxkD4REFZZwy3WHWbi59kaCDXmq1KVV5KAJFsJhC4DGDcVBWxmSdFFpih2NENEf6ujJbn8JWUEDpAzUfFc5hNJ",
+      "slot": 450155186
+    },
+    {
+      "window": 145,
+      "leaf": "GJQ6GJwGS1sANXZ42mAipFX91seRMsTVNsGbGkPBVrAu",
+      "spikes": 1392,
+      "signature": "2FvB15yJcQuQUNyyg1mBggJgxsDKSt5Qw2jAT8aw4ydMesBWGuvR6RHVqzLCYC6Shyy7VdrP5M5HjBX7eZCJpCjj",
+      "slot": 450155191
+    },
+    {
+      "window": 146,
+      "leaf": "EifiVr1LzswTgKLNX6BzX5Xuyw88igTVnmHrkBrgqiAC",
+      "spikes": 1487,
+      "signature": "yj9T2BWeFjXRF1wReC4KBm2jHybawDEBnKNbkMuTCojQZPj14843AxtUzp7hpWBz7UYZxzQwEEp8xw9dPD4rhVx",
+      "slot": 450155197
+    },
+    {
+      "window": 147,
+      "leaf": "4xoCMvPUBs6b31j7nyki5aHPbgtRU3SySiDQK3xLLq1A",
+      "spikes": 1386,
+      "signature": "T2HY4ni9CLpVnPpFH8BpCY3LteaBXdspvWNHc4RXZPBwBGMomJ75GiXYEFQUvnTw9zXg4RRZrwJVqWcmdcP4SDE",
+      "slot": 450155203
+    },
+    {
+      "window": 148,
+      "leaf": "7MM9UmAtZtDtyxc3JRDcYhWuyESwgeKCyBdy2AqhW6VF",
+      "spikes": 1424,
+      "signature": "3p8Jt1ryLAZbEzZn7QWFg4yzVzUb3h1RyKQNfPmpUHh7rt5XYJZMKBNyGgMA3CWNVKecYiS6jsGhE8JG1ScRCTcL",
+      "slot": 450155209
+    },
+    {
+      "window": 149,
+      "leaf": "6CtdNADexhjqbfzLUVbypFzuHf6yt8M7wRvmvscYzSod",
+      "spikes": 1396,
+      "signature": "vGgo3dZGjUZN5EqLbsSDiiQBQG7M8LknbUoaXWgaLCkcsP5DYcFuVyhcxfiH6aJKWtR1k24xSKXFadJoy9S7rf8",
+      "slot": 450155215
+    },
+    {
+      "window": 150,
+      "leaf": "65gACq1a7tAs6gEqd9fyxoGuRfpoJSugYzg6HZN5Rnte",
+      "spikes": 1407,
+      "signature": "M1Hi2W9BA63yNFHisSh2F5xBzLbKoJ2sQgjqXBJhZAX1qjxS1a8GgMkf4tZ25sz37cCb8VvNroZ7aSdbHdADG12",
+      "slot": 450155221
+    },
+    {
+      "window": 151,
+      "leaf": "C6cki8AegCY3RZVjcKb3b5WRiSdwuFxjrJnXq2r7r6WX",
+      "spikes": 1529,
+      "signature": "5jv1sHywCysZZWGBwfbPBk2C8GxMECKhgHFYhmRXfnpaVT4q7YJv8TUNjPeiS9Ysy2w8CAadUT8EHZrtPDWg51NH",
+      "slot": 450155227
+    },
+    {
+      "window": 152,
+      "leaf": "239DJDccVDS3jjuYLsg8PvVqfij7xYrBKn8saq26Phte",
+      "spikes": 1444,
+      "signature": "3ymPPNUeyyFUkCkNHLvLerKzBptBHZSGYaPBoq4N6ZSvPT38qKZY24hXENWeEcmS5PCAJnME2rEcJrD2gTMF4jhs",
+      "slot": 450155234
+    },
+    {
+      "window": 153,
+      "leaf": "6PDAg6HWarxp1M1mX54o1UjAMKkLExC8BeGSZxvEsDYg",
+      "spikes": 1375,
+      "signature": "4ZNEnkNbigHounTbCeiz4fmaakpNwN4jj9VqiUn4J8GGMxLLwtxpLLEFWVz3bFJPacEXFx9tAkMuJcFGzzRrgoau",
+      "slot": 450155241
+    },
+    {
+      "window": 154,
+      "leaf": "6zNnaqYkNCJ8GY2M4RrB5KZ78w1ijW6oy99D6DyRpNLe",
+      "spikes": 1431,
+      "signature": "5ctd5gLDVd4nDgUM3cNGvF7ppi2XXHFokBi7EVfpww57dqR5mSCLmnkrQtvr7nkdBTeCgurPiiyCcAbqbE9ckzps",
+      "slot": 450155247
+    },
+    {
+      "window": 155,
+      "leaf": "56e4yvpb1waSoQRQypXrnu63Nys3i4412oZdPgraSUKh",
+      "spikes": 1425,
+      "signature": "4ELrPMz3CwVLMuokCTyDMDM6cE3P121GE8z5WkBs3pn4EzwEgWFeCvbBD89MATms34FNouoQV1yryYzRtJcJuMBW",
+      "slot": 450155253
+    },
+    {
+      "window": 156,
+      "leaf": "Hxb36qMcUUcwnTw5tjYk9SvX5k7xDKUqnijrrqy2SRie",
+      "spikes": 1400,
+      "signature": "5WVA7PLiHaXfBYzEnXV3jvRsj8zz1zVnVnfwwykcbjFXdgifx8NyRtG36Fo9zxYoaCbEZhsmQbHryqoyYUu5XxCS",
+      "slot": 450155259
+    },
+    {
+      "window": 157,
+      "leaf": "4rt68hmFVgEHd8cu3TChJzSp3tco1kvyyEXtEqY3Mi6K",
+      "spikes": 1416,
+      "signature": "3S7xxojKMrj4nUUwre4GiKx6inzBLt7rjBijaAxFuUp5x7TBT4z5VKmQzt1vFvoeQpRiX2yQVA8nRZFqkGiG3Z7E",
+      "slot": 450155265
+    },
+    {
+      "window": 158,
+      "leaf": "24MQV93PJH5TJdqrRzdG9c1pHTXCZ8X7MtskGjYua9jU",
+      "spikes": 1476,
+      "signature": "heZTFCKyCivebLcFNEZ9WdHVLGeKhmSW6GsWPtBXNBJzbrQw2nyhGDzBw15dKFoE4ViyjbqRGicF6ZRJbA3Ces9",
+      "slot": 450155272
+    },
+    {
+      "window": 159,
+      "leaf": "7iV26mSAbg1QgPNCE6P9hGyrM6RwrBAxBffb9YQ4L8cm",
+      "spikes": 1509,
+      "signature": "5YkUJbbWCDx6GS1RkT23TJN7rsTmYmpaG5xFgyR9pBAYPZBCLcwX8vYx1UWGv9HpAAShMy9qPxx6khzzZ15KGXNU",
+      "slot": 450155279
+    },
+    {
+      "window": 160,
+      "leaf": "5twnNSW1QboiVPV9xZx6SZu49ymtDUGr9zJwq4irsNcm",
+      "spikes": 1478,
+      "signature": "5RWdWQSQmZPRZ3eE7272p97onBNSCEXRXAveottofoS44zqwkajn2RMxz3MTpfgmgYGCjLMFm98una6grPwx3Lpv",
+      "slot": 450155285
+    },
+    {
+      "window": 161,
+      "leaf": "FWtpPZhf511ARcqjMdzyg7w1RA8zMkots9QnogsW959a",
+      "spikes": 1418,
+      "signature": "jzkuiRSJPMuDHnL9UEDd5dxRwxQxZGxQFEBGaLwAVh7FZC4Eoegz3YRx7hTxPfVDZrs4WDrztJdoULfUQmHp66Y",
+      "slot": 450155291
+    },
+    {
+      "window": 162,
+      "leaf": "866LfEWPtekP4AQDtzujajB9whRW2k8Gnwo8iRr8p6sD",
+      "spikes": 1384,
+      "signature": "Ed3MBp3QgeqMaTZSNR5HH3jFk5ZLdC4bvdYHbwtkDLbqAqeJUQngzrN4ZFbMfGw1rsA7pijuQvzzs9LSEoymJWz",
+      "slot": 450155298
+    },
+    {
+      "window": 163,
+      "leaf": "G1YFRmWqVC3tun8Wr4QzXP3v9T2yFRXZ7NuvqYdVxW63",
+      "spikes": 1472,
+      "signature": "2Vbe7YYqDbLZg8uhpZJhakMkDvcoKEQ35Uj19zJAQB5r2JSgwgoMy2xRZGYvWmR5zNecaf9UcweQr3RzVEmV2mmv",
+      "slot": 450155304
+    },
+    {
+      "window": 164,
+      "leaf": "Dtmh4cNCusQCeJJFnSmkLM4Gk5d3bbg1cYnAqQna5mc5",
+      "spikes": 1374,
+      "signature": "5Ck2JRC8xniZFeZJ7ZKskopAjRv1jEBg3GitYnoEuooRmVtmEv8d3k7U7fMv2vBrzdcEc3RYWcab7trvbzy8qA7x",
+      "slot": 450155310
+    },
+    {
+      "window": 165,
+      "leaf": "nfrC5UmpYE9T32TTkuv2yL6xL2GWPraULQCJLyRFMaZ",
+      "spikes": 1421,
+      "signature": "5AxTjgZV3bGfrQcBArHb91wJAjvW3o2FycHEueYmn8odTHH1gFcrmY9f9gk5YQW2PBR86xQHnkUS4q1qtDTUcwaH",
+      "slot": 450155315
+    },
+    {
+      "window": 166,
+      "leaf": "F31tWXdi1vYhoGKCJus87AuSyPCXZV1xWotDj1anqdbt",
+      "spikes": 1370,
+      "signature": "EU2gpyiHtfVrpehfk23j4b5vKKjdLX8syYjgnpZCafJZeYdhkoH21UEv8qiy4GZ5jEtVDxMjD3q6WcHrydS3paQ",
+      "slot": 450155320
+    },
+    {
+      "window": 167,
+      "leaf": "FzrjGkpB69JchXbVaR6vK7dCVY6xeQUJbZqLsWKNWJgD",
+      "spikes": 1432,
+      "signature": "2owd3EnXLBWGwCfqKhZw28UKmjovkPNiuSTarqcidwjk2XxRHe3CoaQPcmtfKPGjzggjaS7xVo7ZxNEzs3nSC2cE",
+      "slot": 450155326
+    },
+    {
+      "window": 168,
+      "leaf": "DwNrVVkNhNjcbcVS363gykBXVXbTKXfCTTRKf8QkSJdT",
+      "spikes": 1424,
+      "signature": "4hWcqM9MtHvobuFA71uqawauDszk6L78QqAox6bXLHLxgKT2NVg7qWrNYmpaMKFUuDKoGtPcHNoXKJwv4JRCPnbX",
+      "slot": 450155332
+    },
+    {
+      "window": 169,
+      "leaf": "3XSymkzW6ikvof1tvNjPsSyfDsJdrmkxt18dDgFXcvB4",
+      "spikes": 1494,
+      "signature": "2a9dF4JNHqNgnVfDERMqmLvGJTyubtEyLuHF5Wn7V5aWT7Y6jJgWtBjZJqwxnsm3fN5qw3MNuT4Qp8DybpMas6mx",
+      "slot": 450155339
+    },
+    {
+      "window": 170,
+      "leaf": "JQcf1KPRdtyPfBJfDrJC4PHzE2CFLq1dVvHTnjijM4K",
+      "spikes": 1460,
+      "signature": "5wRavQ39uq1voA14bQNRDiwTpoh5GWaQ7UKDXycg8u53LbcgshG92jCAjSq4SxyfHkfX2odSq3tWi34ahMkVSGFv",
+      "slot": 450155348
+    },
+    {
+      "window": 171,
+      "leaf": "81DVjusbx4RhYz81tBnBY2rHc57tCV179GryQXzJrNo2",
+      "spikes": 1480,
+      "signature": "3PJBYYoCyKTz2nWUT7y43R4cx19nQzBT4DdX7q3WJ4VibMvSoFoDZmVaFrxLuH4Z4vSFm9x1VzTYPM9CkMktp2cE",
+      "slot": 450155355
+    },
+    {
+      "window": 172,
+      "leaf": "FHdr9C4dAw2uHgzWbCstZ3qP4FFooqexxZPM7fZxyz2U",
+      "spikes": 1435,
+      "signature": "49VQ4er7Tcb96QBHoPuyK35hWQq92j6R46M5yBsfKpK65GCibHJmCd8wm8vrW4YooLBDhvWRBc5g6bednHMPXkDo",
+      "slot": 450155361
+    },
+    {
+      "window": 173,
+      "leaf": "HH9q39JfYXjiCHoTtzwrrYtWshyky1U3GNn23U7oYnZP",
+      "spikes": 1400,
+      "signature": "5JaxdwJm5aCX9agSj2oFTsExDopwS1AVMBBhpTXmRk9tMP6N973KJELgMvfwTP4qwzuCU6gEnXmEvA7zjG3oT9Xp",
+      "slot": 450155367
+    },
+    {
+      "window": 174,
+      "leaf": "ERmFUS3wZoyvef1AYTHUeju1cpqUnZ5aNjreJCajbQrq",
+      "spikes": 1466,
+      "signature": "4dvgnuLuJjVxTQACPMMKqP24vvqWtxerXjcmRBXSzqtSrYHMpdweBDTft1tjgxExQj2TYM1iqQDmdmN4w8BXspDC",
+      "slot": 450155374
+    },
+    {
+      "window": 175,
+      "leaf": "4bA9CxYJrP2SSrbiJQ3ywUhctE2t734BpZx4TS2ynwJf",
+      "spikes": 1382,
+      "signature": "2S2trXvNbTA5PkqfqbdHRDtFbmgpM8M22Lr7SDEMLGcLmUz44dZSk9QCLvriP6YgRq3EaLeTwkpTC8u2kEcmmEz6",
+      "slot": 450155380
+    },
+    {
+      "window": 176,
+      "leaf": "FzbSQ4oat8m92sVVqFDRXEcpeXqoPjMx3ibrQ8qTV7eY",
+      "spikes": 1405,
+      "signature": "52RxnVAFc9LtMLRPt1F8fD2pre7EvhwzrYyQKckDPqRgVmY8mjCPW68odn71PDkPArPoxzF9eBRCNbtiHZieCXEu",
+      "slot": 450155385
+    },
+    {
+      "window": 177,
+      "leaf": "Cpxqy7vcvvVRMcphzixZBtbZpU9uybvCWmnxJaRLitu8",
+      "spikes": 1350,
+      "signature": "5prp6jbSr5GdpnJiYEMaxM3gMk4kLPkKVHYhq4gU84eGbHqFATsoCSGqvLnzTsUhFp6eyCcgGouBU7bJ2eioGb3s",
+      "slot": 450155391
+    },
+    {
+      "window": 178,
+      "leaf": "4hgb4p9cJVGGWcDLnRLShBGfNo3jDSEbCi8vmzmCaSBg",
+      "spikes": 1396,
+      "signature": "3o3cQJL7purepSX7BXarsqo329dxrgPF3WvxhyqtaLcd9PnAydqmpxZqRz5aYH4gsBapQ6FeHAobfdZWadJquXoZ",
+      "slot": 450155397
+    },
+    {
+      "window": 179,
+      "leaf": "CJKvQjXKAmRGJo5SHbHz4s3xH287VQeYUnZfBV9W8ea7",
+      "spikes": 1394,
+      "signature": "2QT2omzCoAtY51hkNCyaf2aSATVZ4qsLJwuTr3Gj564PQdHVvWqP6RJ9DSfRS6cZAaeXdcj3oaYHUw5tzJ9JmTap",
+      "slot": 450155404
+    },
+    {
+      "window": 180,
+      "leaf": "8B8XvxmqELSn6pLSec55fZVginxZbXd6hZRVPjUtJ7oZ",
+      "spikes": 1482,
+      "signature": "2wqVJP9oUffHCzUSWY7XYSbAH5hkFBLD2xoXAGqQP7hHtWbPiB9E6uFM2fS7znjVVNmUyVTUpeBWbZfw4DVGKQzc",
+      "slot": 450155410
+    },
+    {
+      "window": 181,
+      "leaf": "DBKFHnu6svkbVe4w4hTGpeTR3mE7pCD2Fyqkeky6kxW2",
+      "spikes": 1406,
+      "signature": "4DZYn9cqLdeyVmrGLckUfrUMDJ58fAiu6GV5c15PVkG7T1583vaiFygvBft1QaUJrLFE5doBWdFeJLmCjKX2MfAt",
+      "slot": 450155416
+    },
+    {
+      "window": 182,
+      "leaf": "DdfLDtYYQQWSGPEKN6FNo68GPLk1qdpa5wn6WCDm6kwa",
+      "spikes": 1470,
+      "signature": "41ubbvWhYMLiYKU6NL856U6medM7k3cTJCmXexF7gzbARL3B6RfD27t4TSyNR66VubEBFGuUFXpq3pdshpdD1H8w",
+      "slot": 450155422
+    },
+    {
+      "window": 183,
+      "leaf": "CEytCj8Z3nHr3NM5svFwgWF6G2SAUerA8hGaphqx8hND",
+      "spikes": 1373,
+      "signature": "2p1a3dn8JQBi1HpzAbxfErUfvASiVKVTTcq6qF8ZgdTME5tjWtyK6TzvKFV8DxaLXmFLKMfVEzA7Sw2AZCDDPdoW",
+      "slot": 450155427
+    },
+    {
+      "window": 184,
+      "leaf": "EqZEyCtL4a4R5R8bEGacJUx73AyEiBWBpbBR63owMoHK",
+      "spikes": 1361,
+      "signature": "5Zk7T2tKGTzLxrqJfsjEATMTh64ZruzMBGSCEq9zQWg2yaKHDj6RAmRpRs4AuUQuLjjn63FDsRgh7h86LYQvJYPX",
+      "slot": 450155432
+    },
+    {
+      "window": 185,
+      "leaf": "HMU8mUipdxTRNUihEwd1x7oAMaB5GuWdSRc1ZMrh2w5q",
+      "spikes": 1361,
+      "signature": "3od5fGLDgPJyhXQRsedAemWU1GFxATJ2DhEZvjQ7MkSG9JjdbyKnrdbfYX2DVKDd7MM6xXEGokwysBaxgjr9hC1Y",
+      "slot": 450155438
+    },
+    {
+      "window": 186,
+      "leaf": "7562GFy9gHEXQojuSShMV6NUTGi4Szcx72BM3Pt9ohHr",
+      "spikes": 1416,
+      "signature": "39wU6eeqs1uYz26mDysapHsAtpQULBBFDk9ikw27VQFGJRDMBn5u5qJAxj5EGTUyXfNNQHQaARLxid1qrFibFJS9",
+      "slot": 450155444
+    },
+    {
+      "window": 187,
+      "leaf": "H7CJGxiho2Bwefqvj4Ru6yCF4TQDt1WWEXfCBvvS3GFR",
+      "spikes": 1407,
+      "signature": "5ejqCR53VowjtP3frhPPehxdxTyKKvqLenKzfsikVhkDzaCjHBEsFB1M91eYYhhtuZgnjZqBbuAoQFxCqXDaHVC6",
+      "slot": 450155450
+    },
+    {
+      "window": 188,
+      "leaf": "CKfvTAUyfWXeXyeU38r3kQRrvDw5BB4yTw2mNQ7SX7kK",
+      "spikes": 1472,
+      "signature": "4UsiJTwXFKrwEvKGo1DUBcSL2UrP43pudPDAEVbwv5cLytKN53ALsLz7sMyWnpbJq82rBuiqkhMruv2hnBmTjSpj",
+      "slot": 450155456
+    },
+    {
+      "window": 189,
+      "leaf": "JASJRpopV5bReo7GBET8FaS4eswYyQA81d9zn2fxLyrQ",
+      "spikes": 1478,
+      "signature": "3g51DpMzX1zNSEZr4mMVVwCd3Eta3vEGXY5Zn8P7SPfYLyFAYQrGQdaBS6Lg2z9W2R9W5k4EL6K7DiCgsrRnwXZD",
+      "slot": 450155462
+    },
+    {
+      "window": 190,
+      "leaf": "DUWKEGC2w3e4Rh7FRkZ6i9NWTipoMFrd5dAwbUQKwuF",
+      "spikes": 1452,
+      "signature": "4R6ppEPLfi2pG3jLiDLP64cADigXLFJB1HbD2Aia1kExZgHjD5icrRSmENptR511GPWM93kN1nDf3ZxbczN23Cw5",
+      "slot": 450155468
+    },
+    {
+      "window": 191,
+      "leaf": "uEU9hp65jm6dgCP79TTgrScgo53cGAE3CsEbuiMQhSu",
+      "spikes": 1409,
+      "signature": "4YdJx3AKJbT873eCHzUiuYTG3u7JDDZBLVgdBQRV6NMP7GejTBXE1n1PBXNjnKAxCHfu91gYyUpU7krcgas898ZP",
+      "slot": 450155474
+    },
+    {
+      "window": 192,
+      "leaf": "GykKYjGnj1mWBnadQCoaLRvAaCF48S3s1D8m5AsNq53i",
+      "spikes": 1424,
+      "signature": "4shHcSeMXRNZPwBqhuonkccDVbqJQzmxjbWHZXtbxdnYiWaATDPRFAcGGyRtnMtC1jERY28Ae1czuwyHXmSSuF4E",
+      "slot": 450155480
+    },
+    {
+      "window": 193,
+      "leaf": "HToojU8yxw3N5EURJWhg6Mx62841qRRn5b6i8ssEPRJW",
+      "spikes": 1436,
+      "signature": "4onrSu3VS9VPoxvDiKzP9HNgVrBWi9ZwJLDCADj8EaRYGCcFWg6aL841kDYgXmYu4wA1qVCD4P6nco2d4HJUbmfP",
+      "slot": 450155486
+    },
+    {
+      "window": 194,
+      "leaf": "E1ew4fMC52ppXWGr1MHC84nANaZ9tnyVcpppCi3oNqBH",
+      "spikes": 1481,
+      "signature": "4kFyASsqRZTYSQD2awtRump4qoQsep8xgt9kj1HpkbkeTExmS3cr7yGFXX3VFMSj6ULxf2Nf2SS4P7ovvmifHcPV",
+      "slot": 450155491
+    },
+    {
+      "window": 195,
+      "leaf": "2fp41yQ6euJHPNftWce3hwFDjWQXRXKPKZWGejQJ7TAt",
+      "spikes": 1500,
+      "signature": "3KCsrukk9V3HJzfDtQ6yBKjEAddaVmrjLppCzE4J7beN5YM6pENquRPBAZ7vAFuLvBXHrupnwhpBNMBasn2vTBwi",
+      "slot": 450155497
+    },
+    {
+      "window": 196,
+      "leaf": "5Ktpi1Gr8A3R4GgkjZERU5tip9ECb1xQeizBMicvkJHP",
+      "spikes": 1448,
+      "signature": "3fjmPDwC7GnAEt9sHB3fF1EttugEGevwYNRx57NtrPNW7GNMYrKALHmN3ECdBd57KJqdRgcz45rpVnyGTTy5yy8N",
+      "slot": 450155503
+    },
+    {
+      "window": 197,
+      "leaf": "FYVaFY7fRN8nfFA73ScwRj9uz5ev4N1CQDHcPtir9m27",
+      "spikes": 1378,
+      "signature": "5kcvJouCS4BnuedB4U8Ndg7sWfrrUuanTUgFyoPvXegsBpJdWZDYG1CLPy7a2C5b9gALc5aUoTcUf6T4cHgdizeN",
+      "slot": 450155507
+    },
+    {
+      "window": 198,
+      "leaf": "76UVFyof5LGoiJcAFQrkrWF2RA6cvc33gv79iju4myrc",
+      "spikes": 1378,
+      "signature": "2wk7StG9PTjwjSe56qq1i74M4coPDUnzA4nmKP1SPK8ScETWxRJyh6iRxCVe31vJ31pDwRbQoLvBp8qiPVAgtzzG",
+      "slot": 450155513
+    },
+    {
+      "window": 199,
+      "leaf": "9773ZCJk9HhoJiX9qA1JpA1dZp165zpKhZTWuKy3kDg",
+      "spikes": 1342,
+      "signature": "56ntLCZ5NzwReVwvsTGJq7WThVs2rxUg1QfGNxL8TLq5LGVTPRqwFMTXw8HUSfrFHQBxFsXwHaGWhQATN1Y5Mq9u",
+      "slot": 450155519
+    }
+  ]
+}

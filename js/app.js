@@ -112,9 +112,17 @@ async function main() {
   function tickWindow() {
     const w = runWindow(sim, state.windowIndex, TICKS_PER_WINDOW);
     state.windows.set(w.index, w);
-    // Keep memory bounded; VERIFY only ever needs what is on screen.
+    // Keep memory bounded, but never drop a window that is on chain: the page
+    // runs past the committed range within seconds, and a committed window
+    // whose spikes have been evicted cannot be replayed, which would leave
+    // VERIFY with nothing to check exactly where checking matters. The whole
+    // committed run is ~1 MB of spike ids, which is worth holding.
     if (state.windows.size > 400) {
-      state.windows.delete(state.windows.keys().next().value);
+      for (const k of state.windows.keys()) {
+        if (state.manifest?.byWindow.has(k)) continue;
+        state.windows.delete(k);
+        break;
+      }
     }
 
     // Feed the visuals from the window's spikes.
@@ -359,7 +367,17 @@ async function commitIfEnabled(w) {
     signature: entry ? entry.signature : null,
     status: entry ? "onchain" : "local",
   });
-  if (state.receipts.length > 60) state.receipts.pop();
+  // Trim the local tail, but keep every committed row: those are the record,
+  // and scrolling them off after three seconds would hide the only part of
+  // this panel that anything outside the browser can confirm.
+  if (state.receipts.length > 60) {
+    for (let i = state.receipts.length - 1; i >= 0; i--) {
+      if (state.receipts[i].status === "local") {
+        state.receipts.splice(i, 1);
+        break;
+      }
+    }
+  }
   renderReceipts();
 }
 
@@ -372,7 +390,11 @@ function renderReceipts() {
   const el = $("receipts");
   el.innerHTML = "";
   const session = state.manifest && state.divergedAt === null ? state.manifest.session : state.session;
-  for (const r of state.receipts.slice(0, 40)) {
+  // Committed first: a visitor should not have to scroll past a running tail of
+  // uncommitted windows to find the ones that are actually on chain.
+  const onChain = state.receipts.filter((r) => r.status !== "local");
+  const localTail = state.receipts.filter((r) => r.status === "local");
+  for (const r of [...onChain, ...localTail].slice(0, 60)) {
     const row = document.createElement("div");
     row.className =
       "receipt" + (r.status === "verified" ? " verified" : r.status === "failed" ? " failed" : "");

@@ -1,10 +1,12 @@
 {
-  "_comment": "Chain configuration. Until a committer is pointed at this deployment, windows are hashed in the browser and VERIFY recomputes them locally rather than checking anything on chain. The page says so.",
-  "configured": false,
-  "cluster": "devnet",
-  "rpcUrl": "https://api.devnet.solana.com",
-  "explorer": "https://explorer.solana.com/tx/{signature}?cluster=devnet",
-  "committer": null,
-  "wallet": "HPZu33CXGdgtA7rmw5DCkNVaZ9nNUmzi39Hueh69VDb5",
-  "_wallet_note": "Pays the per-window transaction fees. Empty means nothing is being committed."
+  "_comment": "Chain configuration. `configured` is true only when a committer has actually published receipts for this deployment — the page reads it to decide whether VERIFY checks the chain or only recomputes locally.",
+  "configured": true,
+  "cluster": "mainnet",
+  "rpcUrl": "https://solana-rpc.publicnode.com",
+  "_rpc_note": "api.mainnet-beta.solana.com returns 403 to browser requests, so it cannot be used from the page. This endpoint serves getTransaction cross-origin.",
+  "explorer": "https://explorer.solana.com/tx/{signature}",
+  "committer": "Fx9T8Vq7VDPnb1iR8mjbuPjqB6jPydfzWSNsXwCqhmkS",
+  "wallet": "Fx9T8Vq7VDPnb1iR8mjbuPjqB6jPydfzWSNsXwCqhmkS",
+  "_wallet_note": "Pays the per-window transaction fees, which is what the life support panel measures. This is the committer's own key, not the treasury: funded from HPZu33CXGdgtA7rmw5DCkNVaZ9nNUmzi39Hueh69VDb5, which pays nothing itself and so would make that panel read falsely.",
+  "fundedBy": "HPZu33CXGdgtA7rmw5DCkNVaZ9nNUmzi39Hueh69VDb5"
 }
