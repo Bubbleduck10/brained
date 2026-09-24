@@ -192,6 +192,20 @@
   }
   .note b { color: var(--orange); font-weight: 500; }
 
+  /* ---- life support ---- */
+  .addr {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-family: var(--mono); font-size: 12px;
+    background: var(--panel-hi); border: 1px solid var(--line);
+    border-radius: 4px; padding: 10px 12px; margin-bottom: 14px;
+  }
+  .addr code { word-break: break-all; color: var(--ink); }
+  .addr button { padding: 5px 10px; }
+  .addr a { color: var(--muted); font-size: 10px; letter-spacing: 0.14em; text-decoration: none; }
+  .addr a:hover { color: var(--cyan); }
+  .alive { color: var(--green); }
+  .dying { color: var(--pink); }
+
   @media (max-width: 620px) {
     .stats { gap: 16px; }
     .stat .v { font-size: 15px; }
@@ -292,7 +306,28 @@
   </section>
 
   <section class="panel">
-    <header><span class="num">05</span><h2>retained chain receipts</h2><span class="sub" id="net">—</span></header>
+    <header><span class="num">05</span><h2>life support</h2><span class="sub" id="ls-net">solana</span></header>
+    <div class="body">
+      <div class="addr">
+        <code id="wallet">—</code>
+        <button id="copy-wallet">COPY</button>
+        <a id="wallet-link" href="#" target="_blank" rel="noopener noreferrer">EXPLORER</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="k">balance</span><span class="v"><span id="balance">—</span> SOL</span></div>
+        <div class="stat"><span class="k">cost per window</span><span class="v" id="per-window">—</span></div>
+        <div class="stat"><span class="k">burn at current rate</span><span class="v" id="burn">—</span></div>
+        <div class="stat"><span class="k">time remaining</span><span class="v" id="remaining">—</span></div>
+      </div>
+      <p class="hint" id="ls-hint">
+        Every window of neuron fires costs one transaction. This wallet pays for them —
+        when it empties, the commits stop.
+      </p>
+    </div>
+  </section>
+
+  <section class="panel">
+    <header><span class="num">06</span><h2>retained chain receipts</h2><span class="sub" id="net">—</span></header>
     <div class="body">
       <button id="verify">VERIFY ON CHAIN</button>
       <p class="hint" id="verify-hint">VERIFY replays each window locally and checks the recomputed leaf against what is on chain. It does not trust the leaf shown here.</p>

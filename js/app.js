@@ -222,6 +222,7 @@ async function main() {
   }
 
   await setupChain();
+  setupLifeSupport(() => state.windowsPerSecond);
   $("verify").addEventListener("click", () => verifyAll(state));
 }
 
@@ -328,3 +329,114 @@ async function verifyAll() {
 }
 
 main().catch((e) => console.error(e));
+
+
+// ---- life support ---------------------------------------------------------
+//
+// The framing is the honest one: every window is a transaction, transactions
+// cost fees, and this wallet pays them. When it empties the commits stop. So
+// the balance is not decoration — it is the thing that determines whether any
+// of this keeps being recorded.
+
+/** Base fee for a single-signature transaction. */
+const LAMPORTS_PER_TX = 5000;
+const LAMPORTS_PER_SOL = 1e9;
+
+async function setupLifeSupport(currentRate) {
+  const cfg = await fetch("./data/chain.json", { cache: "no-store" })
+    .then((r) => r.json())
+    .catch(() => null);
+  const wallet = cfg?.wallet;
+  if (!wallet) {
+    $("wallet").textContent = "not configured";
+    return;
+  }
+
+  $("wallet").textContent = wallet;
+  $("ls-net").textContent = cfg.cluster ?? "solana";
+  const explorer = (cfg.explorer ?? "").replace("/tx/{signature}", "/address/" + wallet);
+  $("wallet-link").href = explorer || `https://explorer.solana.com/address/${wallet}`;
+
+  $("copy-wallet").addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(wallet);
+      $("copy-wallet").textContent = "COPIED";
+      setTimeout(() => ($("copy-wallet").textContent = "COPY"), 1400);
+    } catch {
+      // clipboard needs a secure context too; the address is on screen anyway
+      $("copy-wallet").textContent = "SELECT IT";
+      setTimeout(() => ($("copy-wallet").textContent = "COPY"), 1800);
+    }
+  });
+
+  const perWindowSol = LAMPORTS_PER_TX / LAMPORTS_PER_SOL;
+  $("per-window").textContent = perWindowSol.toFixed(6) + " SOL";
+
+  // Check both networks. Reading only the configured one means that funding
+  // the wallet on the other network shows a confident, wrong zero — and the
+  // page would look broken for the one reason nobody would think to check.
+  const NETWORKS = [
+    { name: "devnet", rpc: "https://api.devnet.solana.com", cluster: "?cluster=devnet" },
+    { name: "mainnet", rpc: "https://api.mainnet-beta.solana.com", cluster: "" },
+  ];
+
+  async function balanceOn(net) {
+    const r = await fetch(net.rpc, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "getBalance", params: [wallet] }),
+    });
+    const j = await r.json();
+    if (j.error) throw new Error(j.error.message);
+    return j.result?.value ?? 0;
+  }
+
+  async function poll() {
+    const results = await Promise.all(
+      NETWORKS.map((n) => balanceOn(n).then((v) => ({ net: n, lamports: v })).catch(() => null)),
+    );
+    const live = results.filter(Boolean);
+    if (!live.length) {
+      // A public RPC will rate-limit. Say the reading is unavailable rather
+      // than showing a stale number as if it were current.
+      $("balance").textContent = "unavailable";
+      $("remaining").textContent = "—";
+      return;
+    }
+    // Whichever network actually holds something wins; otherwise the default.
+    const funded = live.find((r) => r.lamports > 0);
+    const chosen = funded ?? live.find((r) => r.net.name === (cfg.cluster ?? "devnet")) ?? live[0];
+    const lamports = chosen.lamports;
+    $("ls-net").textContent = chosen.net.name;
+    $("wallet-link").href = `https://explorer.solana.com/address/${wallet}${chosen.net.cluster}`;
+
+    const sol = lamports / LAMPORTS_PER_SOL;
+    $("balance").textContent = sol.toFixed(6);
+    $("balance").className = sol > 0 ? "alive" : "dying";
+
+    const rate = currentRate();
+    const burnPerHour = perWindowSol * rate * 3600;
+    $("burn").textContent = burnPerHour.toFixed(3) + " SOL / hr";
+
+    if (sol <= 0) {
+      $("remaining").textContent = "not funded";
+      $("remaining").className = "v dying";
+      $("ls-hint").textContent =
+        "This wallet is empty, so nothing is being committed. Every window of neuron fires " +
+        "costs one transaction; fund it and the commits begin. The simulation runs either way — " +
+        "what stops without funding is the record of it.";
+      return;
+    }
+    const hours = sol / burnPerHour;
+    $("remaining").className = "v alive";
+    $("remaining").textContent =
+      hours > 48 ? `${(hours / 24).toFixed(1)} days` : hours > 1 ? `${hours.toFixed(1)} hours` : `${(hours * 60).toFixed(0)} min`;
+    $("ls-hint").textContent =
+      `At ${rate} windows per second this burns ${burnPerHour.toFixed(3)} SOL an hour. ` +
+      `When it empties, the commits stop.`;
+  }
+
+  await poll();
+  // 30s: often enough to watch it drain, gentle enough for a public endpoint
+  setInterval(poll, 30_000);
+}

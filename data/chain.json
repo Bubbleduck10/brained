@@ -4,5 +4,7 @@
   "cluster": "devnet",
   "rpcUrl": "https://api.devnet.solana.com",
   "explorer": "https://explorer.solana.com/tx/{signature}?cluster=devnet",
-  "committer": null
+  "committer": null,
+  "wallet": "HPZu33CXGdgtA7rmw5DCkNVaZ9nNUmzi39Hueh69VDb5",
+  "_wallet_note": "Pays the per-window transaction fees. Empty means nothing is being committed."
 }
